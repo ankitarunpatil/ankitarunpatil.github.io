@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Data Science</a></li>
+							<li><a href="sql.html">SQL Projects</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+                            <li ><a href="resume.html">Resume</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/apatil44" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="data_science/covid19.html">Clustering<br />
+									50k Covid-19 Research Papers</a></h2>
+									<p>This project aims to cluster similar articles together<br />
+										so that it will be easier for the Doctors and Scientists<br />
+										To find relevant research papers in a single group or cluster !!
+										</p>
+								</header>
+								<a href="data_science/covid19.html" class="image main"><img src="images/covid.jpg" alt="" /></a>
+							</article>
+                                
+                         
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Overview</h2>
+                                </header>
+                                <p>As we are all aware, the COVID pandemic has violently and unexpectedly taken over all
+                                    nations attacking everyone and sparing no one. It becomes necessary then we put our
+                                    efforts from all sectors to fight this pandemic as one unit. I attempted to do just that by
+                                    taking part in the COVID-19 Open Research DataSet Challenge. This challenge is open in
+                                    order to find out more about this novel coronavirus from research papers and scholarly
+                                    articles on this virus. The White House and a group of leading research groups have
+                                    accumulated resources of 45000 scholarly articles and have posed 10 tasks/questions that
+                                    they attempt to answer with these datasets in order to gain new insights. Questions that
+                                    they attempt to answer range from details of its transmission, incubation, risk factors,
+                                    vaccines, etc. Through this project, I attempt to answer the question of information
+                                    regarding risk factors associated with this coronavirus by applying text and data mining
+                                    techniques to attempt to find information on the same.</p>
+
+                                    <h2>Project Motivation</h2>
+                                                
+                                    </header>
+                                            <ul>
+                                                <li>There are thousands of research papers written on Covid-19. To find a vaccine - the doctors, scientists must go through every research paper to find relevant articles.</li>
+                                                <li>The solution to this problem is to create groups or cluster relevant articles together.</li>
+                                                <li>Hence, my motivation behind this project was to help the community by clustering relevant articles together to help find a vaccine on Covid-19.</li>
+                                            </ul>
+                                            <header>
+                                                <h2>Goal of this project</h2>
+                                                
+                                            </header>
+                                            <ul>
+                                                <li>To cluster different research papers together under one section.</li>
+                                                <li>Apply NLP techniques to process the text information based on title, abstract and summary.</li>
+                                                <li>Create clusters by using K-Means algorithm</li>
+                                            </ul>
+
+                                            <header>
+                                                <h2>Datasets</h2>
+                                            </header>
+                                            <p>I obtained our data set from Kaggle using the following link: <a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge"><b>Data Link</b></a></p>
+                                            <ul>
+                                                <li>The dataset contains a resource of 45773 scholarly articles. In this set, over 33,000 have
+                                                full-text information about COVID-19, SARS-CoV-2, and related coronaviruses. The articles
+                                                are presented in JSON format.</li>
+                                                <li>It was created by Allen Institute for AI in partnership with the Chan Zuckerberg Initiative,
+                                                Georgetown University’s Center for Security and Emerging Technology, Microsoft Research,
+                                                and the National Library of Medicine - National Institutes of Health, in coordination with
+                                                The White House Office of Science and Technology Policy.</li>
+                                            </ul>
+                                        
+                                            
+                                        <header>
+                                            <h2>Steps Taken</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul><li>Meta data for the research papers</li></ul>
+                                        <span class="image fit"><img src="images/covid_read.jpg" alt="" /></span><br>
+                                        
+                                        <ul><li>Reading paper id, abstract, body text json files using FileParser function </li></ul>
+                                        <span class="image fit"><img src="images/covid_read1.jpg" alt="" /></span><br>
+
+                                        <ul><li>Counting words in abstract and body using Lambda function where we use strip and split functions</li></ul>
+                                        <span class="image fit"><img src="images/covid_count.jpg" alt="" /></span><br>
+                                        
+                                        <header>
+                                            <h3>2. Data Preprocessing</h3>
+                                            <ul><li>Eliminating duplicate values from abstract and body</li>
+                                                <li>Eliminating Null values in the data</li></ul>
+                                        </header>
+
+                                    
+                                        <div class="box alt">
+                                            <div class="row gtr-50 gtr-uniform">
+                                                <div class="col-6"><span class="image fit"><img src="images/duplicate_values.png" alt="" /></span></div>
+                                                <div class="col-6"><span class="image fit"><img src="images/null_values.png" alt="" /></span></div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <ul><li>Using <b>Langdetect</b> module, check the language of the research papers and plot the distribution of Languages</li>
+                                        <li>Eliminating <b>STOP Words</b> using <b>Spacy</b> module</li></ul>
+                                        <div class="box alt">
+                                            <div class="row gtr-50 gtr-uniform">
+                                                <div class="col-6"><span class="image fit"><img src="images/Lang_distribution.png" alt="" /></span></div>
+                                                <div class="col-6"><span class="image fit"><img src="images/lang_detect.png" alt="" /></span></div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <ul><li>By plotting the words we see that all of the research papers have word count
+                                            less than 5000, i.e. each research paper has a maximum length of 5000
+                                            words.</li>
+                                            </ul>
+                                            <div class="box alt">
+                                                <div class="row gtr-50 gtr-uniform">
+                                                    <div class="col-6"><span class="image fit"><img src="images/word_count.png" alt="" /></span></div>
+                                                    <div class="col-6"><span class="image fit"><img src="images/unique_word_count.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div>   
+
+                                            <header>
+                                                <h3>3. Data Transformation</h3>
+                                                <ul><li>Vectorization process to apply maching learning algorithms on text. Conversion of raw document to a 
+                                                    matrix of Tf-idf features.</li>
+                                                    <li>Using Principal Component Analysis to reduce the dimensionality in the data.</li>
+                                                    </ul>
+                                            </header>
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-6"><span class="image fit"><img src="images/tf-idf.png" alt="" /></span></div>
+                                                    <div class="col-6"><span class="image fit"><img src="images/pca.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> 
+                                            
+                                            <br><header>
+                                                <h3>4. Model Building</h3>
+                                                <ul><li>K-means Clustering</li>
+                                                    <p>In K-means clustering, the main part is to find the value of K.
+                                                        To find the optimal value of K, I used the Elbow method by plotting distortions.
+                                                    </p>
+                                                    </ul>
+                                            </header>
+                                            
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-12"><span class="image fit"><img src="images/elbow.jpg" alt="" /></span></div>
+                                                </div>
+                                            </div> 
+
+                                            <br><ul><li>K-means Model</li>
+
+                                            <span class="image fit"><img src="images/k_means.jpg" alt="" /></span><br>
+
+                                            <br><header>
+                                                <h3>5. Visualizing data for High Dimensional Dataset</h3>
+                                            </header>
+
+                                                <ul><li>Visualizing using <b>TSNE</b></li>
+                                                    <p>Using T Distributed Stochastic Neighbouring Entities for dimensionality reduction, i.e.
+                                                        bringing down higher dimensions to 2- dimensional X-Y plane.
+                                                    </p>
+                                                    </ul>
+                                            
+
+                                            <span class="image fit"><img src="images/t-sne.png" alt="" /></span><br>
+                                            
+                                            <ul><li>Visualizing using TSNE after adding <b>K-means clusters</b></li>
+                                                <p>The results obtained after clustering the data using K-means and t-SNE
+                                                    and a scatter plot visualizing it.
+                                                </p>
+                                                </ul>
+                                            
+                                                <span class="image fit"><img src="images/cluster_tsne.png" alt="" /></span>
+
+                                                <header>
+                                                    <h3>6. Conclusions</h3>
+                                                </header>   
+                                                
+                                                <ul><li>Different clusters are grouped together based on body texts.</b></li>
+                                                <li>All research papers are clustered based on 20 labels that were
+                                                    labelled using the K-means algorithm.</li>
+                                                <li>It will be easier for the scientists and doctors to find relevant research
+                                                    papers.</li>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/apatil44" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

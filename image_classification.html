@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Data Science</a></li>
+							<li><a href="sql.html">SQL Projects</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+                            <li ><a href="resume.html">Resume</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/apatil44" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="image_classification.html">Image Classification<br />
+									Of Cats and Dogs</a></h2>
+									<p>This project aims to to classify images for cats and dogs using different image classification models.<br />
+										Predicting whether a image is cat or a dog based on different images provided. <br />
+										Creating different Machine Learning models and training them to predict cat and dog images.
+										</p>
+								</header>
+								<a href="image_classification.html" class="image main"><img src="images/catsanddogs.jpg" alt="" /></a>
+							</article>
+                                
+                         
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Overview</h2>
+                                </header>
+                                <p>This case study deals with predicting images for cats and dogs. We have been provided with many images for cats and dogs.
+                                    Our task is to take all of these images and build an ML model that will classify if an image is a cat or a dog.
+                                    Machine Learning models like Keras and Tensorflow will be used to classify the images.
+                                    We have been provided with 3000 images to train our ML models.
+                                </p>
+
+                                    <h2>Project Motivation</h2>
+                                                
+                                    </header>
+                                            <ul>
+                                                <li>To predict if an image is a cat or dog.</li>
+                                                <li>The solution to this problem is to create a Machine Learning model that will take an unseen image of a cat or a dog and classify them accordingly.</li>
+                                            </ul>
+                                            <header>
+                                                <h2>Goal of this project</h2>
+                                                
+                                            </header>
+                                            <ul>
+                                                <li>To classify colored unseen cat or dog image.</li>
+                                                <li>Apply image classification techniques like Keras and Tensorflow to predict the images.</li>
+                                            </ul>
+
+                                            <header>
+                                                <h2>Datasets</h2>
+                                            </header>
+                                            <p>I obtained our data set from the following link: <a href="https://drive.google.com/file/d/16AlwTDOeyFaiP3RPxKOk5s80IycK80X4/view"><b>Data Link</b></a></p>
+                                            <ul>
+                                                <li>The dataset contains a resource of 3000 cat and dog images.</li>
+                                                
+                                            </ul>
+                                        
+                                            
+                                        <header>
+                                            <h2>Steps Taken</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul><li>Reading the images contained in three different files.</li></ul>
+                                        <span class="image fit"><img src="images/image_read.png" alt="" /></span><br>
+                                        
+                                                                               
+                                        <br><header>
+                                            <h3>2. Data Preprocessing</h3>
+                                            <ul><li>Decode the JPEG files to RGB grids of pixels.</li>
+                                                <li>Convert these into floating point tensors.</li>
+                                                <li>Rescale the pixel values (between 0 and 255) to the [0,1] interval.</li>
+                                                </ul>
+                                        </header>
+
+                                        
+                                            
+                                            <br><header>
+                                                <h3>3. Model Building</h3>
+                                                <ul><li>1. Tensorflow</li>
+                                                    <p>Tensorflow - overview
+                                                    </p>
+                                                    </ul>
+                                            </header>
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-6"><span class="image fit"><img src="images/image_tmodel.png" alt="" /></span></div>
+                                                    <div class="col-6"><span class="image fit"><img src="images/image_tmodelsum.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> 
+                                            
+                                            
+                                            <br><ul><li>2. Optimizing the model</li>
+                                            <p>
+                                                Optimizing the model for differnt epochs.
+                                            </p></ul>
+
+                                            <span class="image fit"><img src="images/image_opti.png" alt="" /></span><br>
+                                            
+
+                                            <br><header>
+                                                <h3>3. Visualizing the model</h3>
+                                            </header>
+
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-12"><span class="image fit"><img src="images/image_viz.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> <br>
+
+                                            <br><header>
+                                                <h3>4. Applying Shear and Rotation and fitting the model</h3>
+                                            </header>
+
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-8"><span class="image fit"><img src="images/image_sr.png" alt="" /></span></div>
+                                                    <div class="col-9"><span class="image fit"><img src="images/image_sr1.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> <br>
+                                            
+                                           
+                                            <br><header>
+                                                <h3>5. Visualizing after shear and rotation</h3>
+                                            </header>
+
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-12"><span class="image fit"><img src="images/image_srv.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> <br>
+
+
+                                            <br><header>
+                                                <h3>6. Model building using VGG16</h3>
+                                            </header>
+
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-6"><span class="image fit"><img src="images/image_vgg.png" alt="" /></span></div>
+                                                    <div class="col-6"><span class="image fit"><img src="images/image_vgg1.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> <br>
+
+
+                                            <br><header>
+                                                <h3>7. Fitting and visualizing the model</h3>
+                                            </header>
+
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-7"><span class="image fit"><img src="images/image_vggfit.png" alt="" /></span></div>
+                                                    <div class="col-5"><span class="image fit"><img src="images/image_vggfit1.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> <br>
+
+
+                                            <br><header>
+                                                <h3>8. Testing the model for unseen data</h3>
+                                            </header>
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-12"><span class="image fit"><img src="images/image_test.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> <br>
+
+                                                <header>
+                                                    <h3>4. Conclusions</h3>
+                                                </header>   
+                                                
+                                                <ul><li>We used Gaussian NB and Gradient Boost to classify positive and negative reviews.</b></li>
+                                                <li>It can be observed that both the models have almost similar accuracies.</li>
+                                                <li>Hence, we can use any of the two models to classify positive and negative user reviews.</li>
+                                                <li>Both the classifiers work correctly on the unseen user review.</li>
+                                                <li>Therefore, for this dataset we can say that we have successfully built a classification model to predict user sentiments.</li>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="image_classification.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/apatil44" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

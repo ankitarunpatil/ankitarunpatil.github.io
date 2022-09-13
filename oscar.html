@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Data Science</a></li>
+							<li><a href="sql.html">SQL Projects</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+                            <li ><a href="resume.html">Resume</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/apatil44" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="oscar.html">Classification<br />
+									Oscar Winning Movies</a></h2>
+									<p>This project aims to classify Oscar winning movies based on different attributes.<br />
+										Classification algorithms like DecisionTrees, EGBoost, AdaBoost, GradientBoosting will be used to classify whether the movie will win an oscar or not.<br />
+										
+										</p>
+								</header>
+								<a href="oscar.html" class="image main"><img src="images/oscar.jpg" alt="" /></a>
+							</article>
+                                
+                         
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Overview</h2>
+                                </header>
+                                <p>In this case study, we have been provided with movies dataset, the training data contains 
+                                    different attributes of movies. The dataset also contains the movies that have won an Oscar or not.
+                                    We have been tasked to predict whether a movie will win an Oscar or not based on the historic data provided to us.
+                                    It is our task to create different Machine Learning Model that will predict if a movie will win an Oscar or not.
+                                    For this dataset we have to give the best accuracy model that will predict Oscar Winning Movies in the future.
+                                </p>
+
+                                    <h2>Project Motivation</h2>
+                                                
+                                    </header>
+                                            <ul>
+                                                <li>Predicting Oscar Winning Movies based on the data provided.</li>
+                                                <li>Building different Machine Learning Models for predicting Oscar Winning Movies.</li>
+                                                <li>Figuring out the best model that will be used to predict the the Oscar Winning Movies.</li>
+                                            </ul>
+                                            <header>
+                                                <h2>Goal of this project</h2>
+                                                
+                                            </header>
+                                            <ul>
+                                                <li>To classify Oscar Winning Movies.</li>
+                                                <li>Apply classification algorithms to the whole dataset to train different models.</li>
+                                                <li>Finding the best and accurate model by calculating model Accuracies.</li>
+                                            </ul>
+
+                                            <header>
+                                                <h2>Datasets</h2>
+                                            </header>
+                                            <p>The dataset can be obtained using the following link: <a href="https://drive.google.com/file/d/1Kdhy6yML8HTxBVYoRoxXrKCy6LYjSZas/view?usp=sharing"><b>Data Link</b></a></p>
+                                            <ul>
+                                                <li>The dataset contains 500 records that contain different movie attributes like MarketinExpense,
+                                                    ProductionExpense, Budget, MovieLength, Actor, DirectorRating, ProduerRating.</li>
+                                                <li>Based on the attributes our task is to predict the final column, Star_Tech_Oscar, i.e. 
+                                                    based on all of the attributes if the movie is capable of winning an Oscar or not.</li>
+                                            </ul>
+                                        
+                                            
+                                        <header>
+                                            <h2>Steps Taken</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul><li>Reading the dataset using pandas</li></ul>
+                                        <span class="image fit"><img src="images/decision_read.png" alt="" /></span><br>
+                                    
+                                        
+                                        <header>
+                                            <h3>2. Data Preprocessing</h3>
+                                            <ul><li>Treating missing values</li>
+                                                <li>Replacing missing values with mean</li>
+                                                <li>Creating dummy variables</li></ul>
+                                        </header>
+
+                                    
+                                        <div class="box alt">
+                                            <div class="row gtr-50 gtr-uniform">
+                                                <div class="col-7"><span class="image fit"><img src="images/decision_missing.png" alt="" /></span></div>
+                                                <div class="col-12"><span class="image fit"><img src="images/decision_dumm.png" alt="" /></span></div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <ul><li>Splitting the data into X and Y variables</li>
+                                            <li>Splitting the data into training and test sets</li></ul>
+
+                                        <div class="box alt">
+                                            <div class="row gtr-50 gtr-uniform">
+                                                <div class="col-5"><span class="image fit"><img src="images/decision_split.png" alt="" /></span></div>
+                                                <div class="col-7"><span class="image fit"><img src="images/decision_split1.png" alt="" /></span></div>
+                                                
+                                            </div>
+                                        </div>
+
+                                           
+ 
+                                            
+                                            <br><header>
+                                                <h3>4. Model Building</h3>
+                                                <ul><li><b> Building Decision Tree Classifier</b></li>
+                                                    <li>Predicting the values for Test set for Decision Tree Classifier</li>
+                                                </ul>
+                                            </header>
+                                            
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-6"><span class="image fit"><img src="images/decision_classifier.png" alt="" /></span></div>
+                                                    <div class="col-6"><span class="image fit"><img src="images/decision_classpred.png" alt="" /></span></div>
+                                                </div>
+                                            </div> 
+
+                                            <br><ul><li>Checking the model performance</li></ul>
+
+                                                <div class="row">
+                                                    <div class="row gtr-uniform">
+                                                        <div class="col-12"><span class="image fit"><img src="images/decision_classper.png" alt="" /></span></div>
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                            <br><ul><li>Plotting the graph for Decision Tree Classifier</li></ul>
+                                                
+                                            <span class="image fit"><img src="images/decision_graph.png" alt="" /></span><br>
+                                            
+                                            
+                                            <br><ul><li><b>Using Bagging Classifier</b></li>
+                                            <li>Model Fitting</li>
+                                            <li>Model Preformance and Accuracy</li>
+                                            </ul>
+
+                                            <span class="image fit"><img src="images/decision_bagg.png" alt="" /></span><br>
+
+
+                                            <br><ul><li><b>Using Random Forest Classifier</b></li>
+                                                <li>Model Fitting</li>
+                                                <li>Model Preformance and Accuracy</li>
+                                                </ul>
+    
+                                                <span class="image fit"><img src="images/decision_random.png" alt="" /></span><br>
+
+                                            
+                                                <br><ul><li><b>Using Grid Search Classifier</b></li>
+                                                    <li>Model Fitting</li>
+                                                    <li>Model Preformance and Accuracy</li>
+                                                    </ul>
+        
+                                                    <span class="image fit"><img src="images/decision_grid.png" alt="" /></span><br>
+
+                                                    <br><ul><li><b>Using Gradient Boosting Classifier</b></li>
+                                                        <li>Model Fitting</li>
+                                                        <li>Model Preformance and Accuracy</li>
+                                                        </ul>
+            
+                                                        <span class="image fit"><img src="images/decision_gradient.png" alt="" /></span><br>
+                                                    
+                                                        <br><ul><li><b>Using Adaboost Classifier</b></li>
+                                                            <li>Model Fitting</li>
+                                                            <li>Model Preformance and Accuracy</li>
+                                                            </ul>
+                
+                                                            <span class="image fit"><img src="images/decision_ada.png" alt="" /></span><br>
+
+                                                            <br><ul><li><b>Using XGBoost Classifier</b></li>
+                                                                <li>Model Fitting</li>
+                                                                <li>Model Preformance and Accuracy</li>
+                                                                </ul>
+                    
+                                                                <span class="image fit"><img src="images/decision_xg.png" alt="" /></span><br>
+
+
+
+                                                <header>
+                                                    <h3>5. Conclusions</h3>
+                                                </header>   
+                                                
+                                                <ul><li>It can be observed that almost all of the classifiers give the same accuracies.</b></li>
+                                                <li>We have tested all of the different classifiers in decision trees.</li>
+                                                <li>It can be observed that the best classifier for this dataset is XGBoost classifier with an Accuracy of 66.66%.</li>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="oscar.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/apatil44" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

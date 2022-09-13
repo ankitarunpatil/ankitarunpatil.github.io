@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Data Science</a></li>
+							<li><a href="sql.html">SQL Projects</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+                            <li ><a href="resume.html">Resume</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/apatil44" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="sentiment.html">Sentiment Analysis<br />
+									IMDB Movie Reviews</a></h2>
+									<p>This project aims to to classify IMDB movie reviews into Positive and Negative.<br />
+										Predicting whether a review written by a person is good or bad will be predicted using Natural Language Processing.<br />
+										Reviews will be classified using Machine Learning Algorithms.
+										</p>
+								</header>
+								<a href="sentiment.html" class="image main"><img src="images/movies.jpg" alt="" /></a>
+							</article>
+                                
+                         
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Overview</h2>
+                                </header>
+                                <p>This case study basically deals with 12500 IMDB movie reviews recorded over time by different people. The sentiments recorded are either positive or negative.
+                                    We have been assigned a task by the film company to predict positive and negative reviews for their upcoming film.
+                                    The film company wants to count the number of Positive comments and Negative comments by different people for their analysis of the movie.
+                                    So the company has assigned us this task of creating some algorithm to predict user sentiments.
+                                </p>
+
+                                    <h2>Project Motivation</h2>
+                                                
+                                    </header>
+                                            <ul>
+                                                <li>To predict user sentiments based on the past reviews recorded.</li>
+                                                <li>The solution to this problem is to create a Machine Learning model that will take the user sentiment and predict if a user review is positive or negative.</li>
+                                                <li>Hence, my motivation behind this project was to help the company by classifying user sentiments into positive or negative.</li>
+                                            </ul>
+                                            <header>
+                                                <h2>Goal of this project</h2>
+                                                
+                                            </header>
+                                            <ul>
+                                                <li>To classify unseen positive and negative user reviews.</li>
+                                                <li>Apply NLP techniques to process the text information.</li>
+                                                <li>Apply classification algorithms to classify user reviews.</li>
+                                            </ul>
+
+                                            <header>
+                                                <h2>Datasets</h2>
+                                            </header>
+                                            <p>I obtained our data set from the following link: <a href="http://ai.stanford.edu/~amaas/data/sentiment/"><b>Data Link</b></a></p>
+                                            <ul>
+                                                <li>The dataset contains a resource of 25000 user sentiments for different movies.</li>
+                                                The dataset is divided equally into positive and negative sentiments.
+                                            There are 12500 positive reviews and 12500 negative reviews.</li>
+                                            </ul>
+                                        
+                                            
+                                        <header>
+                                            <h2>Steps Taken</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul><li>Reading positive and negative reviews from files</li></ul>
+                                        <span class="image fit"><img src="images/sen_read.png" alt="" /></span><br>
+                                        
+                                        <ul><li>Reading the data w.r.t positive and negative sentiments. </li></ul>
+                                        <span class="image fit"><img src="images/sen_posneg.png" alt="" /></span><br>
+
+                                        <ul><li>Creating word cloud for positive sentiment.</li>
+                                            <li>Creating word cloud for negative sentiment.</li>
+                                            </ul>
+
+                                            <div class="box alt">
+                                                <div class="row gtr-50 gtr-uniform">
+                                                    <div class="col-6"><span class="image fit"><img src="images/sen_posword.png" alt="" /></span></div>
+                                                    <div class="col-6"><span class="image fit"><img src="images/sen_negword.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                        <br><header>
+                                            <h3>2. Data Preprocessing</h3>
+                                            <ul><li>Combining positive and negative reviews into train and test sets.</li>
+                                                </ul>
+                                        </header>
+
+                                        <span class="image fit"><img src="images/sen_combine.png" alt="" /></span><br>
+
+                                        <ul><li>Removing HTML tags using BeautifulSoup. </li>
+                                            <li>Removing non-letter characters using RegEx. </li>
+                                            <li>Strip and lower case the words using strip and lower function. </li>
+                                            <li>Stem the words using NLTK. </li>
+                                            <li>Eliminating STOP words using NLTK. </li></ul>
+
+                                            <div class="box alt">
+                                                <div class="row gtr-50 gtr-uniform">
+                                                    <div class="col-6"><span class="image fit"><img src="images/sen_soup.png" alt="" /></span></div>
+                                                    <div class="col-6"><span class="image fit"><img src="images/sen_stop.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div>
+ 
+
+                                            <header>
+                                                <h3>3. Data Transformation</h3>
+                                                <ul><li>Normalizing the data.</li>
+                                                    
+                                                    </ul>
+                                            </header>
+
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-12"><span class="image fit"><img src="images/sen_norm.png" alt="" /></span></div>
+                                                    
+                                                </div>
+                                            </div> 
+                                            
+                                            <br><header>
+                                                <h3>4. Model Building</h3>
+                                                <ul><li>1. Gaussian Naive Bayes Classifier</li>
+                                                    <p>Gaussian Naive Bayes Classifier works better with textual data. Hence, I will be using this classification technique.
+                                                    </p>
+                                                    </ul>
+                                            </header>
+                                            
+                                            <div class="row">
+                                                <div class="row gtr-uniform">
+                                                    <div class="col-12"><span class="image fit"><img src="images/sen_model.png" alt="" /></span></div>
+                                                </div>
+                                            </div> 
+
+                                            <br><ul><li>2. Gradient Boosting Classifier Model</li>
+                                            <p>
+                                                Testing the data for different machine learning algorithms.
+                                            </p></ul>
+
+                                            <span class="image fit"><img src="images/sen_model1.png" alt="" /></span><br>
+
+                                            <br><header>
+                                                <h3>3. Testing on unseen user review</h3>
+                                            </header>
+
+
+                                            <span class="image fit"><img src="images/sen_test.png" alt="" /></span><br>
+                                            
+                                           
+
+                                                <header>
+                                                    <h3>5. Conclusions</h3>
+                                                </header>   
+                                                
+                                                <ul><li>We used Gaussian NB and Gradient Boost to classify positive and negative reviews.</b></li>
+                                                <li>It can be observed that both the models have almost similar accuracies.</li>
+                                                <li>Hence, we can use any of the two models to classify positive and negative user reviews.</li>
+                                                <li>Both the classifiers work correctly on the unseen user review.</li>
+                                                <li>Therefore, for this dataset we can say that we have successfully built a classification model to predict user sentiments.</li>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="sentiment.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/apatil44" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

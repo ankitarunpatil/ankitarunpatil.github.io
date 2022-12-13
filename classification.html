@@ -1,0 +1,886 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ankit Patil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <li class="active"><a href="index.html">Machine Learning</a></li>
+                        <!--<li><a href="statistics.html">Statistics</a></li> -->
+                        <li><a href="sql.html">SQL</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        
+                    </ul>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="principal.html">Customer Classification</a></h2>
+									<p>Indentifying the customers who will join the delivery club using Classification Algorithms.<br />
+										</p>
+								</header>
+								<a href="principal.html" class="image main"><img src="images/classification/class_cust.jpeg" alt="" /></a>
+							</article>
+                                
+                         
+                            <!-- Post -->
+                            <section class="post">
+                                
+                                <h2>Business Case</h2>
+                            </header>
+                            <h3> Message from the ABC Grocery Team - </h3>
+                            <blockquote>Hello Data Scientist,
+                            <br><br>
+                                We were so impressed with your work predicting Loyalty Scores that we're hoping you can help us again!
+                            <br>
+                                In July, we sent out mailers in a marketing campaign for our "delivery club". This was a new initiative that cost customers $100 
+                                per year for membership, and offered free grocery deliveries rather than the normal cost of $10 per delivery.
+                            <br>
+                                We feel like the campaign was successful, and if possible, we would like to run it again in the future. Last time however, we 
+                                didn't have a Data Scientist on board, we just sent the mailers out to everyone, apart from a small group. Sending to everyone was 
+                                really expensive to do - and next time we'd like to save on costs by only sending mailers to those customers that are most likely 
+                                to sign up, rather than to everyone.
+                            <br>
+                                We'd love to understand the probability of any given customer signing up to this club. Perhaps there are relationships between 
+                                their shopping behaviour and their characteristics as a customer? If we had this information we could target only those who are 
+                                likely to sign - up. As I mentioned this would vastly reduce costs!  
+                            <br><br>
+
+                            Thanks in advance,<br>
+                            ABC Grocery Web Team
+
+                        </blockquote> <br><br>
+
+                        <h2>Abstract</h2>
+
+                                    <!-- Box -->
+									<div class="box">
+									<ul>
+                                        <li><b>Classification Algorithms</b> are supervised learning algorithms used to predict a dependent outcome based on many independent inputs.
+                                        The famous algorithms for classification include <b>Logistic Regression, Decision Trees, Random Forests, KNN</b>.</li>
+                                        <li>The task of this project is to predict which customers are willing to sign in, so that the team will be sending marketing emails to the people willing to 
+                                            convert, instead of wasting money on the whole population.
+                                        <li>The four algorithms: <b>Logistic Regression, Decision Trees, Random Forests and KNN</b> will help me decide the people who are going to 
+                                            convert and submit this prediction to the team.
+                                        </li>
+                                            
+                                    </ul>
+                                    
+									</div><br>
+
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Introduction</h2>
+                                </header>
+                                <p> 
+                                    The ABC Grocery Team wants to reduce their spending by sending emails to the people who are expected to sign up for the delivery club.
+                                    But how to find this expected group is a problem that the team faces. Therefore, the team has assigned me with the task of finding this group
+                                    and has provided the data of customers for analysis. This is a classic example of classification task and, I have to classify the pople who will be signing up for the delivery club.
+                                    Therefore, I will use classification algorithms like Logistic Regression, Decision Trees, Random Forest and check the accuracies of 
+                                    all the algorithms that will predict sign ups correctly. I will compare all the algorithms and based on the accuracy scores decide 
+                                    which algorithm suits correctly for the data that has been provided. This will help the team to determine which people should receive a marketing email
+                                    and send emails accordingly to people who are willing to signup. 
+                                </p>
+
+                                            
+                                
+                                        <header>
+                                            <h2>Imlpementation</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul>
+                                            <li>The ABC Grocery team has provided me with a pickle file that contain data for customers.</li>
+                                            <li>For reading the data for <b>Classification</b> I will use the <b>Pickle</b> library. Pickle has the <b>pickle.load</b> functionality to read data from pickle files.</li>
+                                            <li>The data is already in the form of a DataFrame. DataFrames are easy for Data Manipulation.</li>
+                                            <li> Below is the data for the classification.</li>
+                                            
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/classification/class_data.png">
+                                            </div> 
+                                            
+                                    </ul>
+
+                                    <header>
+                                        <h2>Algorithm 1: Logistic Regression</h2>
+                                    </header>
+
+                                    <p>
+                                        <b>Logistic Regression</b> is a model used to predict the <b>probability</b> of a certain class or event based on one or more input variables.
+                                        It transforms linear relationships to a probablistic output through <b>Logistic Function</b>.
+                                        <br> I will be implementing Logistic Regression to classify the customers based on the sign up flag provided. The steps are provided as follows:
+                                    </p>
+                                        
+                                        <header>
+                                            <h3>1. Data Preprocessing for Logistic Regression</h3>
+                                        </header>
+                                            <ul>
+                                                <p>Logistic Regression requires the data to be normalized and free from outlier therefore I will perform the following steps:</p>
+                                                <li><b><u>Step 1 - Drop unnecessary columns:</u></b>
+                                                    <br> The columns <b>customer_id</b> will not be required for my analysis hence I will eliminate the column.
+                                                    <br>To achieve this - I will 
+                                                    use the <b>drop</b> functionality of pandas to remove the column.</li>
+                                                    
+                                                </li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_data.png" alt="" >
+                                                </div>
+
+                                                <li><b><u>Step 2 - Shuffle the data:</u></b> 
+                                                    <br>It is a best practice to shuffle the data before performing any further steps. If there is any unknown orderding in the data 
+                                                    shuffling will help me eliminate this ordering and increase randomness in the data. For example, if the data is sorted based on user ids, on ascending or descending order, 
+                                                    based on the users who listened to most artisits. Could be anything - and I want to eliminate this. Therefore, I will shuffle the data.
+                                                <br>
+                                                To achieve this - I will user the <b>shuffle</b> functionality of pandas to eliminate this ordering. This method takes the DataFrame as a parameter to shuffle the data.
+                                                </li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_shuff.png" alt="" >
+                                                </div>
+
+                                                <li><b><u>Step 3 - Check the class balance: </u></b> 
+                                                    <br>Class balance will help me understand if there is an equal distribution of data. Class balance will be performed on the 
+                                                    the purchased column as I want to know the people who listened to a particular artist, bought the album or not.
+                                                    <br>
+                                                    To achieve this - I will use the <b>value_counts</b> functionality of Pandas and normalize the results to get a percentage to make things more understandable.
+                                                    <br> The below image shows that the data is not too balanced and not too imbalanced, so for now I will keep it as it is.
+                                                </li>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_bal.png" alt="" >
+                                                </div>
+
+
+                                                <li><b><u>Step 4 - Deal with Missing Values: </u></b> 
+                                                    <br>Eliminate missing values if there are any.
+                                                    <br>
+                                                    To achieve this - I will use the <b>dropna</b> functionality of Pandas to eliminate all the missing values.
+                                                    <br> The data does not have any missing values.
+                                                </li>
+
+
+                                                <li><b><u>Step 5 - Dealing with Outliers: </u></b>
+                                                    <br> I will first investigate if there are outliers in the data by using <b>describe</b> function of Pandas.
+
+                                                    <div class="gfg">
+                                                        <img class = "center-img" src="images/classification/class_outliers.png" alt="" >
+                                                    </div>
+
+                                                    <br> From the above diagram I can observe that <b>distance_from_store</b> column has a median value of 1.65 and a maximum valu of 44.37, there is a huge difference in these values, hence there might be some outliers.
+                                                    <br> Similarly for columns <b>total_sales, total_items</b> there is a huge difference between median and maximum values, hence there is a possibility of outliers.
+                                                    <br> Hence, I will be eliminating outliers, as outliers do not work great with Logistic Regression.
+
+                                                    <li>Using Box plot approach I have found that there are outliers in the data and I will eliminate the outliers</li>
+
+                                                    <div class="gfg">
+                                                        <img class = "center-img" src="images/classification/class_out.png" alt="" >
+                                                    </div>
+
+                                                </li>
+
+                                                <li><b><u>Step 6 - Split Input and Output variables: </u></b> <br>To bifurcate the data into input and output variables using X and y respectively.
+                                                    <br>
+                                                    To achieve this - I will create two variables <b>X</b> and <b>y</b> where I will eliminate the output column <b>signup_flag</b> in the X variable, i.e. the X variable will contain all the data except 
+                                                    the prediction column <b>signup_flag</b> and 
+                                                    the y variable will contain just the data for prediction column <b>purchased_album</b>.
+                                                </li>
+
+
+                                                <li><b><u>Step 7 - Split Training and Test sets: </u></b> <br>To bifurcate the X and y variables into training and test sets:
+                                                    <br>
+                                                    To achieve this - I will be importing the <b>train_test_split</b> library from <b>sklearn.model_selection</b> that helps in splitting the X,y data into <b>X_train, X_test, y_train, y_test</b>.
+                                                    <br> The test_train_split takes paratmeters as follows:
+                                                    <br><b>X,y</b>: Where X and y are are input and output variables.
+                                                    <br><b>test_size</b>: The size of testing and training. I want the training size to be 80% and the test size to be 20% therefore, I will use 0.2 as the value for test_size.
+                                                    <br><b>stratify</b>: Stratify = y will mean that my training and test sets will have the same proportion of 1's and 0's. This is really helpful in classification problems.  
+                                                </li>
+                                                
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_split.png">
+                                                </div>
+
+                                                <li><b><u>Step 8 - Dealing with categorical variables: </u></b>
+                                                <br> It is observed that there is a categorical variable <b>gender</b> in the data and this must be converted to a numeric.
+                                                <br> To convert categorical to numeric, I will use the <b>OneHotEncoder</b> technique.
+                                                <br> To achieve this I will import the <b>OneHotEncoder</b> library from <b>sklearn.preprocessing</b>
+                                                <br> In the below figure I can see that the <b>gender</b> column has been dropped to eliminate multicollinearity and a new column <b>Gender_M</b> has been introduced that holds numeric data of 1 and 0 to represent male and female.
+                                                    
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_cat.png">
+                                                </div>
+                                                </li>
+
+
+                                                <li><b><u>Step 9 - Feature Selection: RFECV</u></b> 
+                                                    <br> I need to find the desired number of input variables that will describe the data perfectly, and eliminate unnecessary variables that do not help in predicting the outcome.
+                                                    Hence, I will use the method called RFECV to achieve to figure out the best set of varibales to use. The RFECV algorithm will help me determine the number of variables that must be used and what are those variables.
+                                                    <li><b>Recursive Feature Elimination Cross Validation</b> fits a model that starts with all input variables, then iteratively removes 
+                                                    those with the weakest relationship with the output until the desired number of features is reached.</li>
+                                                    <li> To implement RFECV I will import <b>RFECV</b> library from <b>sklearn.feature_selection</b>. This approach essentially fits a model to make predictions and since I am classifying the data using 
+                                                    <b>LogisticRegression</b> I will fit the LogisticRegression model and instantiate the <b>RFECV</b> model and pass in the LosgisticRegression object.</li>
+                                                    <br> I will fit the model on the training data and find the optimal input variables.
+
+                                                </li>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_optimal.png">
+                                                </div>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_opti.png">
+                                                </div>
+
+
+
+                                                <p>The optimal number of variables found is 7. Now I will find the varibales that the algorithm has dropped. From the below table I can see that from 8 input variables now I have 7 variables.
+                                                    <br> I will plot the data with respect to the accuracy scores at each variable that the RFECV algorithm found.
+                                                </p>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/classification/class_plot.png">
+                                                </div>
+
+                                                <p>From the above plot I can see that using 7 features, I will get an accuracy of 90%. Hence, I will use these 7 input variables that have been found by RFECV algorithm.</p>
+
+
+                                            </ul>
+                                        
+
+                                            <header>
+                                                <h3>Logistic Regression Algorithm</h3>
+                                            </header>
+                                            
+
+                                            <header>
+                                                <h3>2. Model Building</h3>
+                                            </header>
+                                                <ul>
+                                                <li><b><u>Instantiate and Fitting the Model</b></u>
+                                                <br> I will import the <b>LogisticRegression</b> model from <b>sklearn.linear_model</b> and will instantiate the an object <b>clf</b>
+                                                <br> I will fit the data on the training data that I created before. 
+                                                </li>
+                                                </ul>
+
+                                                
+
+                                                <header>
+                                                    <h3>4. Model Assessment</h3>
+                                                </header>
+
+                                                <ul>
+                                                    <li><b><u>Model Prediction</u></b>:
+                                                        <br> To predict on the unseen data I will use the <b>predict</b> method.
+                                                    </li>
+
+
+                                                    <li><b><u>Confusion Matrix</u></b>:
+                                                        <br> Confusion matrix wll help me calculate Accuracy, Recall, Precision, F1-Score. 
+
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/classification/class_confusion.png">
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li><b><u>Accuracy</u></b>:
+                                                        <p>Accuracy is the number of correct classification out of all the attempted classifications.</p>
+
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/classification/class_accuracy.png">
+                                                        </div>
+                                                    </li>
+
+                                                    <li><b><u>Precision</u></b>:
+                                                        <p>Of all observations that were predicted as positive, how many were actually positive.</p>
+
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/classification/claa_precision.png">
+                                                        </div>
+                                                    </li>
+
+                                                    <li><b><u>Recall</u></b>:
+                                                        <p>Of all positive observations, how many did I predict as positive.</p>
+
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/classification/class_recall.png">
+                                                        </div>
+
+                                                    </li>
+                                                    
+
+                                                    <li><b><u>F1 - Score</u></b>:
+                                                        <p>F1 Score is the harmonic mean of Precision and Recall. A good F1 Score comes when there is a balance between 
+                                                            Precision and Recall, rather than a disparity between them. As the data is little imbalanced here, F1 Score is a good metric.
+                                                        </p>
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/classification/class_f1score.png">
+                                                        </div>
+
+                                                    </li>
+
+
+                                                    <li><b><u>Optimal Threshold</u></b>:
+                                                        <p>In order to classify the data accordingly, a threshold must be placed at an optimal position. To figure out the optimal threshold I will test all the values between 0 and 1.
+                                                            After testing for all the threshold values between 0 and 1 I get the following graph:
+                                                        </p>
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/classification/class_thresh.png">
+                                                        </div>
+
+                                                        <p>From the plot above, I can see that, at the value of 0.44, I get a maximum F1 score of <b>78%</b>. Therefore, I will use the optimal threshold value of <b>0.44</b> to classify the data, rather 
+                                                            than taking the default value of 50% or probability of 0.5</p>
+                                                    </li>
+                                                </ul>
+
+                                                    <header>
+                                                        <h2>Algorithm 2: Decision Trees for Classification</h2>
+                                                    </header> 
+
+                                                    <p>
+                                                        <b>A Decision Tree</b> is a model that <b>splits</b> the data into <d>distinct buckets</d> using the input variables, with split decisions being based 
+                                                        on how well each potential split explains <b>differences</b> in output variables.
+                                                        <br> I will be implementing Decision Trees to classify the customers based on the sign up flag provided. The steps are provided as follows:
+                                                    </p>
+                                                        
+                                                        <header>
+                                                            <h3>1. Data Preprocessing for Decision Tree Classification</h3>
+                                                        </header>
+                                                            <ul>
+                                                                <p>Decision Trees basically requires the data to be numeric and the preprocessing steps are almost similar to Logistic Refression. The steps are as follows:</p>
+                                                                <li><b><u>Step 1 - Drop unnecessary columns</u></b></li>
+                                                                <li><b><u>Step 2 - Shuffle the data</u></b></li>
+                                                                <li><b><u>Step 3 - Check the class balance</u></b></li>
+                                                                <li><b><u>Step 4 - Deal with Missing Values</u></b></li>
+                                                                <li><b><u>Step 5 - Split Input and Output variables</u></b></li>
+                                                                <li><b><u>Step 6 - Split Training and Test sets</u></b></li>
+                                                                <li><b><u>Step 7 - Dealing with categorical variables</u></b></li>
+
+
+                                                                <div class="gfg">
+                                                                    <img class = "center-img" src="images/classification/decision_data.png">
+                                                                </div>
+                                                                
+                                                        </ul>
+                                                                <header>
+                                                                    <h3>Decision Tree Classifier Algorithm</h3>
+                                                                </header>
+                                                                
+                    
+                                                                <header>
+                                                                    <h3>2. Model Building</h3>
+                                                                </header>
+                                                                    <ul>
+                                                                    <li><b><u>Instantiate and Fitting the Model</b></u>
+                                                                    <br> I will import the <b>DecisionTreeClassifier</b> model from <b>sklearn.tree</b> and will instantiate the an object <b>clf</b> with max depth as 5 for now.
+                                                                    <br> I will fit the data on the training data that I created before. 
+                                                                    </li>
+                                                                    </ul>
+                    
+                                                                    
+                    
+                                                                    <header>
+                                                                        <h3>4. Model Assessment</h3>
+                                                                    </header>
+                    
+                                                                    <ul>
+                                                                        <li><b><u>Model Prediction</u></b>:
+                                                                            <br> To predict on the unseen data I will use the <b>predict</b> method.
+                                                                        </li>
+                    
+                    
+                                                                        <li><b><u>Confusion Matrix</u></b>:
+                                                                            
+                    
+                                                                            <div class="gfg">
+                                                                                <img class = "center-img" src="images/classification/decision_confusion.png">
+                                                                            </div>
+                    
+                                                                        </li>
+                    
+                                                                        <li><b><u>Accuracy</u></b>:
+                                                                            
+                    
+                                                                            <div class="gfg">
+                                                                                <img class = "center-img" src="images/classification/decision_accuracy.png">
+                                                                            </div>
+                                                                        </li>
+                    
+                                                                        <li><b><u>Precision</u></b>:
+                                                                            
+                    
+                                                                            <div class="gfg">
+                                                                                <img class = "center-img" src="images/classification/decision_precision.png">
+                                                                            </div>
+                                                                        </li>
+                    
+                                                                        <li><b><u>Recall</u></b>:
+                                                                            
+                    
+                                                                            <div class="gfg">
+                                                                                <img class = "center-img" src="images/classification/decision_recall.png">
+                                                                            </div>
+                    
+                                                                        </li>
+                                                                        
+                    
+                                                                        <li><b><u>F1 - Score</u></b>:
+                                                                            <div class="gfg">
+                                                                                <img class = "center-img" src="images/classification/decision_f1score.png">
+                                                                            </div>
+                    
+                                                                        </li>
+                    
+                    
+                                                                        <li><b><u>Finding Max Depth</u></b>:
+                                                                            <p> While building the model I had given a default depth of <b>5</b>. To find the optimal depth I will iterate over depths over 1 to 15 to find the optimal depth
+                                                                                and append the depth according to the accuracies i.e. I will find the optimal depth by checking accuracy of the algorithm at each depth and select the depth having maximim accuracy.
+                                                                                I will plot depth vs accuracy to find the optimal depth.
+                                                                            </p>
+                                                                            
+                                                                            <div class="gfg">
+                                                                                <img class = "center-img" src="images/classification/decision_depth.png">
+                                                                            </div>
+                    
+                                                                            <p>From the above plot I can see that, at the depth of <b>9</b> the maximum accuracy found is <b>92%</b>. Hence, the algorithm must use the maximim depth of <b>9</b> to build the Decision Tree.</p>
+                                                                        </li>
+
+                                                                        <li><b><u>Plotting the Tree</u></b>
+                                                                        
+                                                                            <div class="gfg">
+                                                                                <img class = "center-img" src="images/classification/decision_tree.png">
+                                                                            </div>
+
+                                                                    </ul>
+
+                                                            
+                                                                    <header>
+                                                                        <h2>Algorithm 3: Random Forest for Classification</h2>
+                                                                    </header> 
+                
+                                                                    <p>
+                                                                        <b>A Random Forest</b> is an ensemble model consisting of many Decision Trees working together across different <b>randomnly selected subsets</b> of data, 
+                                                                            facilitating improved accuracy and stability.
+                                                                        <br> I will be implementing Random Forest to classify the customers based on the sign up flag provided. The steps are provided as follows:
+                                                                    </p>
+                                                                        
+                                                                        <header>
+                                                                            <h3>1. Data Preprocessing for Random Forest Classification</h3>
+                                                                        </header>
+                                                                            <ul>
+                                                                                <p>Random Forests basically requires the data to be numeric and the preprocessing steps are similar to Decision Tree Classification. The steps are as follows:</p>
+                                                                                <li><b><u>Step 1 - Drop unnecessary columns</u></b></li>
+                                                                                <li><b><u>Step 2 - Shuffle the data</u></b></li>
+                                                                                <li><b><u>Step 3 - Check the class balance</u></b></li>
+                                                                                <li><b><u>Step 4 - Deal with Missing Values</u></b></li>
+                                                                                <li><b><u>Step 5 - Split Input and Output variables</u></b></li>
+                                                                                <li><b><u>Step 6 - Split Training and Test sets</u></b></li>
+                                                                                <li><b><u>Step 7 - Dealing with categorical variables</u></b></li>
+                
+                
+                                                                                <div class="gfg">
+                                                                                    <img class = "center-img" src="images/classification/decision_data.png">
+                                                                                </div>
+                                                                                
+                                                                        </ul>
+                                                                                <header>
+                                                                                    <h3>Decision Tree Classifier Algorithm</h3>
+                                                                                </header>
+                                                                                
+                                    
+                                                                                <header>
+                                                                                    <h3>2. Model Building</h3>
+                                                                                </header>
+                                                                                    <ul>
+                                                                                    <li><b><u>Instantiate and Fitting the Model</b></u>
+                                                                                    <br> I will import the <b>DecisionTreeClassifier</b> model from <b>sklearn.tree</b> and will instantiate the an object <b>clf</b> with <b>n_estimators</b> i.e. number of decision trees as <b>500</b> and <b>max_features</b> i.e. the maximum number 
+                                                                                    of variables used in each tree as <b>5</b> for now.
+                                                                                    <br> I will fit the data on the training data that I created before. 
+                                                                                    </li>
+                                                                                    </ul>
+                                    
+                                                                                    
+                                    
+                                                                                    <header>
+                                                                                        <h3>4. Model Assessment</h3>
+                                                                                    </header>
+                                    
+                                                                                    <ul>
+                                                                                        <li><b><u>Model Prediction</u></b>:
+                                                                                            <br> To predict on the unseen data I will use the <b>predict</b> method.
+                                                                                        </li>
+                                    
+                                    
+                                                                                        <li><b><u>Confusion Matrix</u></b>:
+                                                                                            
+                                    
+                                                                                            <div class="gfg">
+                                                                                                <img class = "center-img" src="images/classification/forest_confusion.png">
+                                                                                            </div>
+                                    
+                                                                                        </li>
+                                    
+                                                                                        <li><b><u>Accuracy</u></b>:
+                                                                                            
+                                    
+                                                                                            <div class="gfg">
+                                                                                                <img class = "center-img" src="images/classification/forest_accuracy.png">
+                                                                                            </div>
+                                                                                        </li>
+                                    
+                                                                                        <li><b><u>Precision</u></b>:
+                                                                                            
+                                    
+                                                                                            <div class="gfg">
+                                                                                                <img class = "center-img" src="images/classification/forest_precision.png">
+                                                                                            </div>
+                                                                                        </li>
+                                    
+                                                                                        <li><b><u>Recall</u></b>:
+                                                                                            
+                                    
+                                                                                            <div class="gfg">
+                                                                                                <img class = "center-img" src="images/classification/forest_recall.png">
+                                                                                            </div>
+                                    
+                                                                                        </li>
+                                                                                        
+                                    
+                                                                                        <li><b><u>F1 - Score</u></b>:
+                                                                                            <div class="gfg">
+                                                                                                <img class = "center-img" src="images/classification/forest_f1.png">
+                                                                                            </div>
+                                    
+                                                                                        </li>
+                                    
+                                    
+                                                                                        <li><b><u>Feature Importance</u></b>:
+                                                                                            
+                                                                                            
+                                                                                            <div class="gfg">
+                                                                                                <img class = "center-img" src="images/classification/forest_feature.png">
+                                                                                            </div>
+                                    
+                                                                                        </li>
+                
+                                                                                        <li><b><u>Permutation Importance</u></b>
+                                                                                        
+                                                                                            <div class="gfg">
+                                                                                                <img class = "center-img" src="images/classification/forest_permutation.png">
+                                                                                            </div>
+                                                                                    </ul>     
+
+                                                                                    <header>
+                                                                                        <h2>Algorithm 4: K Nearest Neighbors for Classification</h2>
+                                                                                    </header> 
+                                
+                                                                                    <p>
+                                                                                        The <b>KNN Algorithm</b> predicts a class for an <b>unknown data point</b> using the <b>most popular class</b> of a number of nearly known data points.
+                                                                                        The number of nearly data points used to form the prediction is denoted by <b>K</b>.
+                                                                                        <br> I will be implementing KNN to classify the customers based on the sign up flag provided. The steps are provided as follows:
+                                                                                    </p>
+                                                                                        
+                                                                                        <header>
+                                                                                            <h3>1. Data Preprocessing for kNN Classification</h3>
+                                                                                        </header>
+                                                                                            <ul>
+                                                                                                <p>kNN basically requires the data to be numeric and scalesd and the preprocessing steps are similar to Logistic Regression. The steps are as follows:</p>
+                                                                                                <li><b><u>Step 1 - Drop unnecessary columns</u></b></li>
+                                                                                                <li><b><u>Step 2 - Shuffle the data</u></b></li>
+                                                                                                <li><b><u>Step 3 - Check the class balance</u></b></li>
+                                                                                                <li><b><u>Step 4 - Deal with Missing Values</u></b></li>
+                                                                                                <li><b><u>Step 5 - Deal with Outliers</u></b></li>
+                                                                                                <li><b><u>Step 6 - Split Input and Output variables</u></b></li>
+                                                                                                <li><b><u>Step 7 - Split Training and Test sets</u></b></li>
+                                                                                                <li><b><u>Step 8 - Dealing with categorical variables</u></b></li>
+                                                                                                <li><b><u>Step 9 - Feature Scaling</u></b></li>
+                                
+                                
+                                                                                                <div class="gfg">
+                                                                                                    <img class = "center-img" src="images/classification/knn_feature.png">
+                                                                                                </div>
+
+                                                                                                <li><b><u>Step 9 - Feature Selection</u></b></li>
+                                                                                                
+
+                                                                                                <div class="gfg">
+                                                                                                    <img class = "center-img" src="images/classification/knn_featureselection.png">
+                                                                                                </div>
+                                                                                        </ul>
+                                                                                                <header>
+                                                                                                    <h3>KNN Algorithm</h3>
+                                                                                                </header>
+                                                                                                
+                                                    
+                                                                                                <header>
+                                                                                                    <h3>2. Model Building</h3>
+                                                                                                </header>
+                                                                                                    <ul>
+                                                                                                    <li><b><u>Instantiate and Fitting the Model</b></u>
+                                                                                                    <br> I will import the <b>KNeighborsClassifier</b> model from <b>sklearn.neighbors</b> and will instantiate the an object <b>clf</b>. 
+                                                                                                    
+                                                                                                    <br> I will fit the data on the training data that I created before. 
+                                                                                                    </li>
+                                                                                                    </ul>
+                                                    
+                                                                                                    
+                                                    
+                                                                                                    <header>
+                                                                                                        <h3>4. Model Assessment</h3>
+                                                                                                    </header>
+                                                    
+                                                                                                    <ul>
+                                                                                                        <li><b><u>Model Prediction</u></b>:
+                                                                                                            <br> To predict on the unseen data I will use the <b>predict</b> method.
+                                                                                                        </li>
+                                                    
+                                                    
+                                                                                                        <li><b><u>Confusion Matrix</u></b>:
+                                                                                                            
+                                                    
+                                                                                                            <div class="gfg">
+                                                                                                                <img class = "center-img" src="images/classification/knn_corr.png">
+                                                                                                            </div>
+                                                    
+                                                                                                        </li>
+                                                    
+                                                                                                        <li><b><u>Accuracy</u></b>:
+                                                                                                            
+                                                    
+                                                                                                            <div class="gfg">
+                                                                                                                <img class = "center-img" src="images/classification/knn_accuracy.png">
+                                                                                                            </div>
+                                                                                                        </li>
+                                                    
+                                                                                                        <li><b><u>Precision</u></b>:
+                                                                                                            
+                                                    
+                                                                                                            <div class="gfg">
+                                                                                                                <img class = "center-img" src="images/classification/knn_precision.png">
+                                                                                                            </div>
+                                                                                                        </li>
+                                                    
+                                                                                                        <li><b><u>Recall</u></b>:
+                                                                                                            
+                                                    
+                                                                                                            <div class="gfg">
+                                                                                                                <img class = "center-img" src="images/classification/knn_recall.png">
+                                                                                                            </div>
+                                                    
+                                                                                                        </li>
+                                                                                                        
+                                                    
+                                                                                                        <li><b><u>F1 - Score</u></b>:
+                                                                                                            <div class="gfg">
+                                                                                                                <img class = "center-img" src="images/classification/knn_f1score.png">
+                                                                                                            </div>
+                                                    
+                                                                                                        </li>
+                                                    
+                                                    
+                                                                                                        <li><b><u>Optimal K value</u></b>:
+                                                                                                            
+                                                                                                            
+                                                                                                            <div class="gfg">
+                                                                                                                <img class = "center-img" src="images/classification/knn_optimal.png">
+                                                                                                            </div>
+                                                    
+                                                                                                        </li>
+                                
+                                                                                   
+                                                                                                    </ul>  
+
+                                               
+
+                                                <h3>Model Summary</h3>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Model Name</th>
+													<th>Accuracy</th>
+													<th>Precision</th>
+                                                    <th>Recall</th>
+                                                    <th>F1 Score</th>
+                                                    <th>Optimal F1 Score</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Logistic Regression</td>
+													<td>86.62%</td>
+													<td>78.73%</td>
+                                                    <td>69.04%</td>
+                                                    <td>73.41%</td>
+                                                    <td>78%</td>
+												</tr>
+												<tr>
+													<td>Decision Trees</td>
+													<td>92.94%</td>
+													<td>88.46%</td>
+                                                    <td>88.46%</td>
+                                                    <td>88.46%</td>
+                                                    <td>92.45%</td>
+												</tr>
+												<tr>
+													<td>Random Forests</td>
+													<td>93.52%</td>
+													<td>88.67%</td>
+                                                    <td>90.38%</td>
+                                                    <td>89.52%</td>
+                                                    <td>90%</td>
+												</tr>
+												<tr>
+													<td>KNN Classifier</td>
+													<td>93.63%</td>
+													<td>100%</td>
+                                                    <td>76.19%</td>
+                                                    <td>86.48%</td>
+                                                    <td>86.49%</td>
+												</tr>
+												
+											</tbody>
+											
+										</table>
+									</div>
+
+                                        <br>          
+                                    <header>
+                                        <h3>5. Conclusion</h3>
+                                    </header>   
+                                    
+
+                                                <ul>
+                                                   <p>
+                                                    I have used all the classification algorithms on the data and I can conclude that the <b>best F1 Score</b> is shown by <b>Decision Trees</b>.
+                                                    I am using F1 Score as final metric as the data is little imbalanced. F1 Score is more reliable for this data. 
+                                                    Therefore, I can head back to The ABC Grocery team and present my findings regarding the customers who are most likely to sign up to the delivery club.
+                                                    This way, the team will send mrketing emails only to customers who are willing to sign up, thus saving marketing costs of the team.
+                                                    
+                                                    </p>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
+</html>

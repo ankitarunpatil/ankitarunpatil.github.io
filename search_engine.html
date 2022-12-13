@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ankit Patil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Machine Learning</a></li>
+							<!--<li><a href="statistics.html">Statistics</a></li> -->
+							<li><a href="sql.html">SQL</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+								<header class="major">
+									<h1><a href="search_engine.html">Image Search Engine
+									</a></h1>
+                                    <a href="search_engine.html" class="image main"><img src="images/search_engine/e1.webp" alt="" /></a>
+								</header>
+								
+                                
+                         
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Business Case</h2>
+                                </header>
+                                <h3> Message from the ABC Grocery Team - </h3>
+                                <blockquote>Hello Data Scientist,<br><br>
+                                We have been looking through a lot of our customer feedback lately, and one thing in particular has come up a number of times.<br>
+                                Our customers know we have a great range of competitive proces products in our clothing section - but they are struggling to find the products they are looking for on our website.<br>
+                                They are often buying much more expensive products, and then later finding out that we actually stocked a very similar, but lower-priced alternative.<br>
+                                We need to remedy this! <br>
+                                I have seen the incredible work you have done so far and wondered if any of this could be applied to the problem we are describing here?<br>
+                                Can Deep Learning be used to help customers find the products they are after? We have provided you some data to use for testing - let us know how you get on!<br><br>
+
+                                Thanks in advance,<br>
+                                ABC Grocery Web Team
+
+                            </blockquote> <br><br>
+
+                                    <h2>Abstract</h2>
+
+                                    <!-- Box -->
+									<div class="box">
+										<ul>
+                                            <li>A <b>Convolution Neural Network</b> is a deep learning neural network, a type of Artificial Neural Network that is used in image recognition. 
+                                                CNN is a type of network architecture which works on <b>pixels of data</b> to recognize images.</li>
+                                           <li>The task of this project is to train the model to recognize related images and return all of the products related to that image.</li>
+                                           <li>I will be leveraging the power of the pre-trained model <b>VGG16</b> to create a more powerful implementation that will not only classify 
+                                        similar images, but will return similar products.</li>
+                                        </ul>
+                                    
+									</div><br>
+                                                
+                                    
+                                    <header>
+                                        <h2>Introduction</h2>
+                                    </header>
+
+                                    <p>The ABC Grocery has gone through a lot of customer feedback and they have figured out a common problem - the customers are struggling 
+                                        to find the products. Apparently they are buying expensive products when the cheap version of the product is available. Finding all 
+                                        the related products on the website is a difficult task for them. Therefore, the team wants me to figure out a solution for this problem.
+                                        The team wants me to build a model that will return all the similar looking shoes.
+                                        <b>VGG16</b> is a prebuilt image recognition model that was built by google and trained on more than one million images from ImageNet. 
+                                        VGG16 is a perfect model in this case therefore, I will be using VGG16 to retun similar images.
+                                    </p>
+
+
+                                    <header>
+                                        <h2>Implementation</h2>
+                                    </header>
+    
+                                    <header>
+                                        <h3>1. Reading the data</h3>
+                                    </header>
+    
+                                    <ul>
+                                        <li>The ABC Grocery Team has provided me images of womens' shoes in a folder called data. The team has provided me with two "most bought womens shoes" 
+                                            and the team wants me to find relevant shoes.
+                                        </li>
+                                        <li>There are 300 different images and they represent the current range of shoes The ABC Grocery team has.</li>
+    
+                                        <div class="gfg">
+                                            <img class = "center-img" src="images/search_engine/search_shoes.png">
+                                        </div>
+                                        
+                                    </ul>
+
+                                    <p>For each of the 300 images I want to return the output from the global average pooling layer at the end of the network architecture i.e. 
+                                        the end prior to any of the dense or output layers. The global average pooling layer will be slightly different than the normal output pooling 
+                                        layer. I will be creating the max pooling layer. For each image the output from the global average pooling layer will be a one dimansional array 
+                                        or vector of 512 numbers and these numbers will represent the features that are found in that image and this will be known as the feature vector.
+                                        I will store that feature vector of those 512 numbers for each of the 300 base images in other words I will create an object which contains 300 dots 
+                                        of 512 numbers. The second thing I will do is for any image that is used as a search image i.e. when a customer passes in a new image to search a shoe 
+                                        they like to look up I will create a feature vector of 512 numbers for that image exactly the same way I did for the base images. Then I will compare the 
+                                        feature vector of base images and feature vector of new search image to find vector similarity and return relevant images from the base images that appear 
+                                        to have closest match.  
+                                         </p>
+    
+                                    <header>
+                                        <h3>2. Importing Libraries</h3>
+                                    </header>
+
+                                    <ul>
+                                        <li><b>Model</b>: To work with keras functional api I will import Model from <b>tensorflow.keras.models</b></li>
+                                        <li><b>load_model</b>: To use the saved model  I will import load_model from <b>tensorflow.keras.models</b></li>
+                                        <li><b>VGG16</b>: To work with VGG16 I will import the model from <b>tensorflow.keras.applications.vgg16</b></li>
+                                        <li><b>preprocess_input</b>: VGG16 requires specific preprocessing therefore I will import the preprocessing steps from <b>tensorflow.keras.applications.vgg16</b></li>
+                                        <li><b>NearestNeighbors</b>: To compare seach image with base set of image to check which images are similar I will use NearestNeighbors from <b>sklearn.neighbors</b></li>
+                                        
+                                    </ul>
+
+                                    <header>
+                                        <h2>Bringing in the VGG16 Model</h2>
+                                    </header>
+
+                                    <p>I want the network till the pooling layer - this is where the features will come from therefore I will exclude the top of the network.
+                                        I am only interested in the features that it learned along the way.
+                                    </p>
+
+                                    <h3>Image Parameters</h3>
+
+                                    <p>VGG16 works with different sets of parameters from image width, image height and the number of channels. VGG16 works better when image width and image height 
+                                        is <b>224 pixels</b> and the channels are <b>3</b> as our images are colored images.
+                                    </p>
+
+                                    <h3>Network Architecture</h3>
+
+                                    <p>I will use the VGG16 model and by excluding the top and global average will be applied to the final output layer. The output will be an array 
+                                        of numeric information rather than many arrays to represent the set of all features. The parameters for VGG16 would be the <b>input_shape</b> which will include image widht, height and number of channels.
+                                        The parameter <b>include_top</b> will be <b>False</b> as I want the network to be till the pooling layers and the parameter for <b>pooling</b> would be <b>avg</b>
+                                        as I want the global average. 
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/search_engine/search_vgg16.png">
+                                    </div>
+
+                                    <p>From the above architecture I can observe that the final output layer is the global average pooling layer with a total of 512 features.
+                                        All of the features have been summarized into one vector of 512 numbers and for each image this will represent its features. This feature vector 
+                                        will be used to compare the images and assess their similarities.
+                                    </p>
+
+                                    <p><b>Creating the Model object</b>
+                                    <br> Using Keras functional api imported above I will use <b>Model</b> with parameters of inputs and outputs where input will be <b>vgg.inputs</b> 
+                                    and outputs will be <b>vgg.layers[-1].output</b> where -1 represents the final layer. I will save the model to a location in my system.
+                                    </p>
+
+
+                                    <header>
+                                        <h3>Preprocessing and Featurizing Images</h3>
+                                    </header>
+
+                                    <p>This step is important as I will have to preprocess all the images so that the keras and VGG16 can accept the images so that the images can be passed 
+                                        into the model and output can be a feature vector.</p>
+
+                                    <p>
+                                        <b>Preprocess Image</b>
+                                        <br>
+                                        The preprocess image function will receive filepath as a parameter, the image will be converted to an array, the image dimensions will be expanded 
+                                        to fit the batch dimension as Keras wants the batch dimension to pass images in batches. Finally, images will be preprocessed using <b>preprocess_input</b>
+                                        functionality of Keras. 
+                                    </p>
+
+
+                                    <p>
+                                        <b>Featurize Image</b>
+                                        <br>
+                                        I will use this function to featurize each image as the final output is the global average pooling layer that will give me the feature vector.
+                                    </p>
+
+
+                                    <header>
+                                        <h3>Featurize Base Images</h3>
+                                    </header>
+
+                                    <p>This step will featurize all of the 300 base images using the functions preprocess_image and featurize_image that I created in the above two steps.
+                                        I will also store all of the feature images in pickle files to assess the similarity of new images that are input into the image search engine.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/search_engine/search_featurize.png">
+                                    </div>
+
+                                    <p>From the above image I can see that the features are saved as pickle files and I can use them whenever I need</p>
+
+
+                                    <header>
+                                        <h3>Passing New Images and Returning Similar Results</h3>
+                                    </header>
+
+                                    <ul>
+                                        <li>
+                                            <b>Step 1 - Load in required Objects</b>
+                                            <br>Using the <b>load_model</b> functionality of Keras, I will load the model that I had saved before. I will also load the filenames 
+                                            and feature vectors for each of the 300 images that I have saved in the previous steps.
+                                        </li>
+                                        <li>
+                                            <b>Step 2 - Search Parameters</b>
+                                            <br> The images similar to the below images need to be searched. I will find 8 similar images to the below image.
+                                            <br><br>
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/search_engine/search_imae.png">
+                                                <img class = "center-img" src="images/search_engine/search_2.png">
+                                                
+                                            </div>
+
+                                        </li>
+
+                                        
+
+                                        <li>
+                                            <b>Step 3 - Preprocess and featurize search image</b>
+                                            <br>
+                                            To compare the search image with the preprocessed and featirized base images I will featurize and preprocess the new image too.
+                                        </li>
+                                        <li>
+                                            <b>Step 4 - Instantiate nearest neighbors logic</b>
+                                            <br>
+                                            To find the 8 closest images to the search image, I will use the nearest neighbors alogithm. 
+                                        </li>
+                                        <li>
+                                            <b>Step 5 - Apply to feature vectore store</b>
+                                            <br> Applying the nearest neighbors to feature vectors to get 8 closest features.
+                                        </li>
+                                        <li>
+                                            <b>Step 6 - Return search results for each image</b>
+                                            <br> Returning the search results is the backbone of the entire process. I will pass the search feature vector to the object I created 
+                                            for nearest neighbors the search result will return the 8 nearest neighbors and for each of the image it will return the cosine distance 
+                                            and index of the feature vector from the feature vector store that contains all 300 images.
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/search_engine/search_nearest.png">
+                                            </div>
+
+                                            The above image shows the nearest cosine distances and the indices where the most similare images are.
+                                        </li>
+
+                                        <li>
+                                            <b>Step 7 - Convert closest image indices & distances to lists</b>
+                                            <br> I want to plot all the most similar images using <b>matplotlib</b>. For that I need to convert the closest 
+                                            distances and indices to be lists. hence, I will converst the indices and distances.
+                                        </li>
+                                        <li>
+                                            <b>Step 8 - Get list of filenames for search results</b>
+                                            <br> To get the filenames for each of the search results and check how good the model has performed I will append all the filenames 
+                                            in an object. 
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/search_engine/search_files.png">
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <b>Step 9 - Plot results</b>
+                                            <br> Plotting all the images that I have got using in the above step.
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/search_engine/search_results.png">
+                                            </div>
+
+                                            From the image above I can see all the 8 images from the base set that my network predicted as similar to the search image based upon
+                                            the cosine distance. At the top of each image is the cosine similarity score. 
+
+                                        </li>
+                                        
+                                        
+                                    </ul>
+
+                                   <header>
+                                    <h3>Conclusions</h3>
+                                   </header>
+
+                                   <p>
+                                        From the above implementation I can conclude that I can find similar images using deep learning network VGG16. I can go to The ABC Grocery Team 
+                                        and confidently conclude that using my network architecture the team can solve the customers' problem of not finding relevant products. This model can be implemented 
+                                        in the search engine for customers to search for most similar products. This way the customers would be able to find all the products with different prices easily.
+                                   </p>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
+</html>

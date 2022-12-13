@@ -27,7 +27,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Data Science</a></li>
+							<li class="active"><a href="index.html">Machine Learning</a></li>
 							<li><a href="sql.html">SQL Projects</a></li>
 							<li><a href="certifications.html">Certifications</a></li>
                             <li ><a href="resume.html">Resume</a></li>
@@ -257,20 +257,34 @@
 					</footer>
 
 				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
-					</div>
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
 
-			</div>
+        </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
-	</body>
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
 </html>

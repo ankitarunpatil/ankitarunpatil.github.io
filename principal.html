@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ankit Patil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <li class="active"><a href="index.html">Machine Learning</a></li>
+                        <!--<li><a href="statistics.html">Statistics</a></li> -->
+                        <li><a href="sql.html">SQL</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        
+                    </ul>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="principal.html">Dimensionality Reduction - PCA</a></h2>
+									<p>This project aims to reduce large dimensions into smaller dimensions by using Principal Component Analysis.<br />
+										</p>
+								</header>
+								<a href="principal.html" class="image main"><img src="images/pca/pca.jpeg" alt="" /></a>
+							</article>
+                                
+                         
+                            <!-- Post -->
+                            <section class="post">
+                                
+                                <h2>Business Case</h2>
+                            </header>
+                            <h3> Message from the ABC Grocery Team - </h3>
+                            <blockquote>Hello Data Scientist,<br><br>
+                                We cannot believe how much value you're adding! Since you're on a roll, we've got another task for you.. 
+                                <br> We're looking to diversify slightly, and promote Ed Sheeran's new album. We've recently purchased some data around the 
+                                listening habits of our customers, as well as which customers purchased his last album.<br>
+                                <br> We obtained this data for 365 of our customers. It contains the percentage of historical listening time allocated to each of 
+                                100 artisit - will this be a problem?<br>
+                                <br> Perhaps you could try and build a model, that would predict the customers who might be interested in his new album? If there is potential,
+                                we could look to purchase updated listening habits data for out full customer base.    
+                            <br><br>
+
+                            Thanks in advance,<br>
+                            ABC Grocery Web Team
+
+                        </blockquote> <br><br>
+
+                        <h2>Abstract</h2>
+
+                                    <!-- Box -->
+									<div class="box">
+									<ul>
+                                        <li><b>Principal Component Analysis</b> is often used as a <b>Dimensionality Reduction</b> technique that can <b>reduce a large set</b>
+                                            of variables down to a <b>smaller set</b> that still contains most of the <b>original information</b>.</li>
+                                        <li>The task of this project is to analyze the historic data of 365 customers and predict if they would be interested in Ed Sheeran's new album as the ABC Grocery Team wants to 
+                                            diversify.
+                                        </li>
+                                        <li>Principal Component Analysis will help me understand the huge number of of unlabelled columns as there are 100 different artists and I do not have any information
+                                            about the artisits.</li>
+                                            
+                                    </ul>
+                                    
+									</div><br>
+
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Introduction</h2>
+                                </header>
+                                <p> 
+                                    The ABC Grocery Team is looking to diversify and promote Ed Sheeran's new album and the team has also purchased the data around the listening habits of ABC's customers.
+                                    They also have the data for the customers who purchased his last album. They have collected the data for 365 customers who have listened to 100 differnt artists in the past.
+                                    The Team has asked me to to figure out the customers who will be interested in his new album. This is a classic example of a <b>Classification Task</b> but the team has provided
+                                    a wide range of data of 100 different unlabelled Artists. <b>Principal Component Analysis</b> will help me reduce this huge dimensionality in the data into fewer dimensions 
+                                    by preserving most of the dimensions, thus reducing the number of dimensions to work on and making the data less wide. Once I get the columns, I will be able to perform <b>Classification Task</b> on the reduced data. PCA will help me save a lot 
+                                    of computational cost as the data would be reduced and manageable. Hence, <b>PCA</b> is the go to method in this case.
+                                </p>
+
+                                            
+                                        <header>
+                                            <h2>Imlpementation</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul>
+                                            <li>The ABC Grocery team has provided us with excel files that contain data for customer, the artisis they listen to and the time they listen to each artist.</li>
+                                            <li>For reading the data I will use the <b>Pandas</b> library. Pandas has the read_csv functionality to read excel files.</li>
+                                            <li>I will convert the excel data into DataFrame as Pandas DataFrames are easy for Data Manipulation.</li>
+                                            
+                                            
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/pca/pca_read.png" alt="" >
+                                            </div> 
+                                            
+                                    </ul>
+                                    
+                                        
+                                        <header>
+                                            <h3>2. Data Preprocessing</h3>
+                                        </header>
+                                            <ul>
+                                                <li>For implementing PCA I will have to fit the model on the training data and then test on the unseen data. For getting the train and test sets ready, I will be following the below tasks: </li>
+                                                <li><b><u>Step 1 - Drop User ID:</u></b> 
+                                                    <br>User ID is not an input variable and it will not be used in dimensionality reduction hence, I will eliminate it.
+                                                <br>To achieve this - I will 
+                                                use the <b>drop</b> functionality of pandas to remove the column.</li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/pca/pca_drop.png" alt="" >
+                                                </div>
+                                            
+                                                <li><b><u>Step 2 - Shuffle the data:</u></b> 
+                                                    <br>It is a best practice to shuffle the data before performing any further steps. If there is any unknown orderding in the data 
+                                                    shuffling will help me eliminate this ordering and increase randomness in the data. For example, if the data is sorted based on user ids, on ascending or descending order, 
+                                                    based on the users who listened to most artisits. Could be anything - and I want to eliminate this. Therefore, I will shuffle the data.
+                                                <br>
+                                                To achieve this - I will user the <b>shuffle</b> functionality of pandas to eliminate this ordering. This method takes the DataFrame as a parameter to shuffle the data.
+                                                </li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/pca/pca_shuffle.png" alt="" >
+                                                </div>
+
+                                                <li><b><u>Step 3 - Check the class balance: </u></b> 
+                                                    <br>Class balance will help me understand if there is an equal distribution of data. Class balance will be performed on the 
+                                                    the purchased column as I want to know the people who listened to a particular artist, bought the album or not.
+                                                    <br>
+                                                    To achieve this - I will use the <b>value_counts</b> functionality of Pandas and normalize the results to get a percentage to make things more understandable.
+                                                    <br> The below image shows that the data is well balanced.
+                                                </li>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/pca/pca_balance.png" alt="" >
+                                                </div>
+
+                                                <li><b><u>Step 4 - Deal with Missing Values: </u></b> 
+                                                    <br>Eliminate missing values if there are any.
+                                                    <br>
+                                                    To achieve this - I will use the <b>dropna</b> functionality of Pandas to eliminate the all the missing values.
+                                                    <br> The data does not have any missing values.
+                                                </li>
+
+                                                <li><b><u>Step 5 - Split Input and Output variables: </u></b> <br>To bifurcate the data into input and output variables using X and y respectively.
+                                                    <br>
+                                                    To achieve this - I will create two variables <b>X</b> and <b>y</b> where I will eliminate the output column <b>purchased_album</b> in the X variable, i.e. the X variable will contain all the data except 
+                                                    the prediction column <b>purchased_album</b> and 
+                                                    the y variable will contain just the data for prediction column <b>purchased_album</b>.
+                                                </li>
+
+
+                                                <li><b><u>Step 6 - Split Training and Test sets: </u></b> <br>To bifurcate the X and y variables into training and test sets:
+                                                    <br>
+                                                    To achieve this - I will be importing the <b>train_test_split</b> library from <b>sklearn.model_selection</b> that helps in splitting the X,y data into <b>X_train, X_test, y_train, y_test</b>.
+                                                    <br> The test_train_split takes paratmeters as follows:
+                                                    <br><b>X,y</b>: Where X and y are are input and output variables.
+                                                    <br><b>test_size</b>: The size of testing and training. I want the training size to be 80% and the test size to be 20% therefore, I will use 0.2 as the value for test_size.
+                                                    <br><b>stratify</b>: Stratify = y will mean that my training and test sets will have the same proportion of 1's and 0's. This is really helpful in classification problems.  
+                                                </li>
+
+                                                <li><b><u>Step 6 - Feature Scaling: </u></b> <br>Feature Scaling for PCA is very important as the algorithm can successfully judge the correlations between the variables
+                                                    and effectively create Principle Components for us.
+                                                    <br>
+                                                    To achieve this - I will use <b>Standardization</b>. To use standardization I will be importing <b>StandardScaler</b> from <b>sklearn.preprocessing</b> to bring in the preprocessing functionality.
+                                                    <br> I will apply the standard_scaler to X_train object by using <b>fit_transform</b>. I will use fit_transform as it will fit the transformations based on the training data and overwrite the X_train object.
+                                                    <br> I will also use the same for the X_test object, but instead of using <b>fit_transform</b> I will use just use <b>transform</b> and this just means that the scaling is based of the rules from the training data rather than the rules of the test set itself.
+                                                </li>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/pca/pca_scale.png" alt="" >
+                                                </div>
+
+                                            </ul>
+                                        
+                                            
+                                            <header>
+                                                <h3>3. Model Building</h3>
+                                            </header>
+                                                <ul>
+                                                    <li>So now my data is ready for implementing <b>PCA</b>. For that I will follow: </li>
+                                                    <li><b>Step 1 - Instantiate the object</b>
+                                                    <br> To do this I will create an object called pca that will hold the functionalities of PCA. To implement this I will first have to import PCA functionality from <b>sklearn.decomposition</b>. 
+                                                    <br> The parameter for PCA would be:
+                                                    <br><b>n_components</b>: I will set this to <b>None</b> which means there will be as many components as there are columns. 
+                                                    I can also write this as specific components or proportion of components which will create the required number of components 
+                                                    to explain the specified percentage of variance.
+                                                    <br> After Instantiating the object I will <b>fit</b> PCA on <b>X_train</b> object and not use <b>fit_transform</b> as 
+                                                    I want to check the variance at each number of component, so that I can get an idea of how many number of components I want to choose.
+                                                    </li>
+
+                                                    <li><b><u>Step 2 - Extract explained variance across components</u></b>
+                                                    <br> To get the variance for each number of components I will use an attribute of the PCA object called <b>explained_variance_ratio</b>.
+                                                    <br> Next I will create the cumulative sum of the results i.e. the cumulative variance after each number of components. I will do this by using <b>cumsum()</b>
+
+                                                    <li><b><u>Step 3 - Plotting the Results</u></b>
+                                                    <br>The explained variance and explained cumutaive variance is very difficult to understand in a tabular format hence, I will plot the results using <b>matplotlib</b>
+                                                    <br> I will declare a list in the range of 1 to 100 components to plot variance and plot two different plots to explain the explained and cumulative variance after each number of components.
+                                                </li>
+                                                  
+                                                    </li>
+                                                </ul>
+
+                                                <span class="image fit"><img src="images/pca/pca_plot.png" alt="" /></span><br>
+
+                                                <header>
+                                                    <h3>4. Results</h3>
+                                                </header>
+
+                                                <ul>
+                                                From the above plot we can conclude that: 
+                                                <li>In the first plot first component explains most of the variance and each subsequent components explains less and less.</li>    
+                                                <li>The second plot gives me a nice smooth curve.</li>
+                                                <li>The plots do not give an exact indication of the number of components I should be using as there is no right or wrong answer. It is the <b>tradeoff</b>
+                                                between the number of component I am happy dealing with and the amount of variance I want explained.</li>
+                                                <li>From the second graph it can be seen that around <b>75% variance</b> is explained by around <b>20 components</b>. So as a starter I will use 20 components for classification.</li>
+                                                
+                                                <li><b><u>Training the Model with obtained components</u></b>
+                                                <br> I will use the same steps I discussed above for instantiating the object and implementing PCA, but this time instead of all the components, I will 
+                                                use <b>0.75</b> as 75% of the components explain most of the data.
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/pca/pca_comp.png" alt="" >
+                                                </div>
+                                                
+                                                <br> From the above figure, I can see that <b>75% of data</b> is explained by <b>24 components</b>.
+
+                                                </li>
+                                                <li><b><u>Apply PCA with selected number of components</u></b>
+                                                <br>I have have the number of components using PCA to define 75% of my data by using 24 components therefore, now I will apply a classification strategy on these 24 components or 24 columns.
+                                                <br>I will use the simple <b>RandomForestClassifier</b> that I will import from the <b>sklearn.ensemble</b> library to train the data on X_train and y_train objects.</li>
+                                            
+                                                <li><b><u>Assessing classification accuracy on test set</u></b>:
+                                                <br> I will use the <b>predict</b> functionality to predict the results on the test set by passing on the X_test object.
+                                                <br> After this, I will be using the <b>accuracy_score</b> functionality to assess these predictions by passing the y_test object and the predictions object that we obtained above.
+                                                <br> After running the above step, it is observed that I get an <b>Accuracy Score of 93%</b>. 
+                                                <br> This concludes that I have obtained a classification model with the accuracy of 93% just by using <b>24 components</b> instead of the original 100 components.
+                                                </li>
+
+                                            </ul>
+
+                                            
+                                                <header>
+                                                    <h3>5. Conclusion</h3>
+                                                </header>   
+                                                
+                                                <ul>
+                                                    <li>
+                                                        From the above analysis I can strongly say that instead of using all the 100 variables provided, I can just use 24 variables to predict if the album will be purchased 
+                                                        or not. And I can confidently go to the ABC Grocery Team and suggest that they get some up to date listening data and I can apply this model to predict which customer 
+                                                        are highly likely to be interested in Ed Sheeran's new album.
+                                                    </li>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
+</html>

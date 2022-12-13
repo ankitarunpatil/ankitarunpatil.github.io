@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ankit Patil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <li class="active"><a href="index.html">Machine Learning</a></li>
+                        <!--<li><a href="statistics.html">Statistics</a></li> -->
+                        <li><a href="sql.html">SQL</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        
+                    </ul>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="association.html">Association Rule Learning</a></h2>
+									<p>This project aims to figure out customer buying habits using<br />
+										Association Rule Learning.<br />
+										</p>
+								</header>
+								<a href="association.html" class="image main"><img src="images/association/store.jpeg" alt="" /></a>
+							</article>
+                                
+                         
+                            <!-- Post -->
+                            <section class="post">
+                                
+                                <h2>Business Case</h2>
+                            </header>
+                            <h3> Message from the ABC Grocery Team - </h3>
+                            <blockquote>Hello Data Scientist,<br><br>
+                            We are potentially looking to re-jig the alcohol department within our store. Our customers are often complaining that they can't find the products
+                            they want, and are also wanting recommendations about which other products they should try.<br>
+                            On top of this, our marketing team at ABC want to start running some bundled promotions to see if they can spark this department into life.<br>
+                            We've heard that you have been studying Association Rule Learning and wondered if this might help us solve some of these problems.<br>
+                            We can provide you with a file of 3,500 alcohol transactions. I don't know what you'll find... but if you could use your magic to help us
+                            on the above ideas then this could have a huge impact! Please let us know once you have some results and we can discuss!
+                            <br><br>
+
+                            Thanks in advance,<br>
+                            ABC Grocery Marketing Team
+
+                        </blockquote> <br><br>
+
+                        <h2>Abstract</h2>
+
+                                    <!-- Box -->
+									<div class="box">
+									<ul>
+                                        <li><b>Association Rule Learning</b> is an approach that discovers the <b>strength of relationships</b> between 
+                                        different data points. It is commonly utilised to understand which products are <b>frequently purchased together</b>.</li>
+                                        <li>The ABC Grocery team wants to bring the alcohol department to life by bundling some promotions around the alcohol department and also help customers find relevant products nearby.
+                                        </li> 
+                                        <li><b>Association Rule Learning</b> will help me understand which products should be placed near each other and what is the relationship between these products.</li>  
+                                    </ul>
+                                    
+									</div><br>
+
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Introduction</h2>
+                                </header>
+                                <p> 
+                                    The ABC Grocery Team wants to re-organize their alcohol department as there have been a lot of complaints from the customers lately.
+                                    Complaints regarding finding products, finding relevant products, recommendations of the products that the customers must try.<br>
+                                    The team is keen on bringing the alcohol department to life and also wants me to provide some strategies to bundle promotions 
+                                    around this department. My task is to provide some ideas to the team so that they can spark this department back to life and 
+                                    re-organize some proucts.
+                                    <b>Association Rule Learning</b> helps in finding interesting and useful information that can be implemented in a business setting, for example bundeled promotions, 
+                                    buy product A get product B free or get a discount on B. It can also help grocery owners, stores of similar setting understand which products should be near each other in the store 
+                                    in order to make the journey of the customer as easy as possible. Therefore, I will be using <b>Association Rule Learning</b> to accomplish the task assigned.
+
+
+                                </p>
+
+                                            
+                                        <header>
+                                            <h2>Imlpementation</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul>
+                                            <li>The ABC Grocery team has provided us with excel file that contain 3,500 alcohol transactions that contain 3,567 rows and 46 coulmns, i.e. there are 3,567 transactions and 45 products bought along with alcohol.</li>
+                                            <li>For reading the data I will use the <b>Pandas</b> library. Pandas has the <b>read_csv</b> functionality to read excel files that contain .csv extension.</li>
+                                            <li>I will convert the excel data into DataFrame alcohol_transaction as Pandas DataFrames are easy for Data Manipulation.</li>
+                                            
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/association/association_df.png" alt="" >
+                                            </div> 
+                                            
+                                    </ul>
+                                    
+                                        
+                                        <header>
+                                            <h3>2. Data Preprocessing</h3>
+                                        </header>
+                                            <ul>
+                                                <li>Association Rule Learning can be implemented using the <b>Apriori Algorithm</b> and this algorithm does not accept data in the form of DataFrame or an Array.
+                                                Instead it wants us to provide the data as a list of lists. Therefore, each transaction that I will have will be one list and this list will contain 
+                                                one element for each product in that transaction. I will implement these steps to achieve this: </li>
+                                                <li><b><u>Step 1 - Drop Transaction_ID column:</u></b> Transaction_ID column is not needed in this implementation, hence I will drop the column. 
+                                                <br>To achieve this - I will 
+                                                use the <b>drop</b> functionality of pandas to eliminate this column.</li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/association/drop_trans_id.png" alt="" >
+                                                </div>
+                                            
+                                                <li><b><u>Step 2 - Creating a list of all Transactions:</u></b> Creating a list of all transactions as Apriori algorithm does not accept DataFrames or Arrays.
+                                                <br>
+                                                To achieve this - I will use the <b>iterrows()</b> to iterate through all the rows in the DataFrame. Drop the missing values using <b>dropna</b> function and use the <b>append</b> method to append every row to newly declared <b>transaction_list</b>.
+                                                </li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/association/trans_list.png" alt="" >
+                                                </div>
+
+                                            </ul>
+                                        
+                                            
+                                            <header>
+                                                <h3>3. Model Building</h3>
+                                            </header>
+                                                <ul>
+                                                    <li><b><u>Step 1 - Import Apriori</u></b>
+                                                    <br> To import Apriori algorithm I will have to first install the package using <b>pip install apyori</b>.
+                                                    <br> To bring in and use the functionality I will have use <b>from apyori import apriori</b>.
+                                                    </li>
+                                                    <li><b><u>Step 2 - Build the Model</u></b>
+                                                        <br>I will pass the transaction_list that I created above into the Apriori Algorithm.
+                                                        The algorithm takes different parameters and thresholds that include the list, min_support, min_confidence, min_lif, min_lenght, max_length respectively. 
+                                                        <br>In the first parameter we pass in the data.
+                                                        <br><b>min_support: </b> Support is the percentage of all transactions that contain both item A and item B.
+                                                        <br><b>min_confidence: </b> Of all the transactions that include item A, what proportion also included item B.
+                                                        <br><b>min_lift: </b> The factor by which the confidence exceeds the Expected Confidence.
+                                                        <br><b>min_length, max_length: </b> How many combinations do I want to try.
+                                                    </li>
+
+                                                    
+                                                </ul>
+
+
+                                            <br><header>
+                                                <h3>4. Results</h3> </header>
+                                                <ul><li><b><u>Step 1 - Creating Meaningful Data</u></b>
+                                                <br> The Apriori Algorithm returns the result in the form of a list which is not understandable.
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/association/model_list.png" alt="" >
+                                                </div>
+
+                                                <br>From the above image we can see that this does not make much sense.
+                                                
+                                                </li>
+                                                <li><b><u>Step 2 - Converting the list to a DataFrame: </u></b>
+                                                <br> I will convert the list ro a DataFrame for understanding my findings.
+                                                </li>    
+                                                    
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/association/association_rule_df.png" alt="" >
+                                                </div>
+
+                                                <li><b><u>Step 3 - Sorting rules by descending Lift</u></b></li>
+                                                <br> Lift measures the factor by which the confidence exceeds the expected confidence, i.e. how much more likely are these two items purchased together than expected.
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/association/rules_desc.png" alt="" >
+                                                </div>
+
+                                                 </ul>
+
+    
+                                                <header>
+                                                    <h3>5. Conclusion</h3>
+                                                </header>   
+                                                
+                                                <ul>
+                                                    <p>From the above table I can conclude that there is a very strong relationship between the gifts related to alcohol and I would strongly recommend 
+                                                        placing alcohol and alcohol gifts together. There is also a relationship between the "small" word and the ABC Grocery marketing team would 
+                                                        like to go through this once. This table would be really help the marketing team to find relationship between different products and help place all of these products strategically and try bundling them 
+                                                        to get more sales. The customers would then find relevant products at a single place and also find different recommended products after the team has re-organized the alcohol department and products in the store.
+                                                    </p>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
+</html>

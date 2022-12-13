@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ankit Patil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <li class="active"><a href="index.html">Machine Learning</a></li>
+                        <!--<li><a href="statistics.html">Statistics</a></li> -->
+                        <li><a href="sql.html">SQL</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        
+                    </ul>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="causal_impact.html">Causal Impact Analysis</a></h2>
+									<p>This project aims to measure change using a time series approach known as<br />
+										Causal Impact Analysis.<br />
+										</p>
+								</header>
+								<a href="causal_impact.html" class="image main"><img src="images/causal_imapct/impact.jpeg" alt="" /></a>
+							</article>
+                                
+                         
+                            <!-- Post -->
+                            <section class="post">
+                                
+                                <h2>Business Case</h2>
+                            </header>
+                            <h3> Message from the ABC Grocery Team - </h3>
+                            <blockquote>Hello Data Scientist,<br><br>
+                            As you know from the previous projects, in July, we sent out mailers in a marketing campaign for our "delivery club".
+                            This was a new initiative that cost customers $100 per year for membership, and offered free grocery deliveries rather than the normal 
+                            cost of $10 per delivery.<br><br>
+                            We really want to understand if customers who joined the club have increased their spending with us in the months following.
+                            Our hypothesis was that if customers are not paying for deliveries, they'll be tempted to shop with us more frequently,
+                            and hopefully even purchase more each time.<br>
+                            For now, we'd just really like to understand the uplift in sales for customers that joined the club, over and above what they would have 
+                            spent had the club not come into existence - is this something you could help us with?
+                            <br><br>
+
+                            Thanks in advance,<br>
+                            ABC Grocery Web Team
+
+                        </blockquote> <br><br>
+
+                        <h2>Abstract</h2>
+
+                                    <!-- Box -->
+									<div class="box">
+									<ul>
+                                            <li><b>Causal Impact Analysis</b> is a time-series technique developed by <b>Google</b>. It estimates <b>what would have happened</b>(known as "counterfactual") by applying
+                                            a model to comparable data in a <b>pre-period</b> and projecting this model onto that data in the <b>post-period</b>. The <b>difference</b> between the actual data and the counterfactual in the 
+                                        post-period, is the <b>estimated impact of the event</b>.</li>
+                                        <li>The task of this project is to understand if the customers who joined the "delivery club" have increased their spending with The ABC Grocery in the following months and also help us understand if the marketing campaign introduced by The ABC Grocery is successful or not?</li>
+                                        <li>Causal Impact Analysis will help me understand if there is an uplift in sales after the customers joined the "delivery club" over there was no existence of a "delivery club".</li>
+                                            
+                                    </ul>
+                                    
+									</div><br>
+
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Introduction</h2>
+                                </header>
+                                <p> In the month of July 2022, The ABC Grocery marketing team developed a new strategy of introducing a <b>Delivery Club</b> for the customers. 
+                                    The <b>Delivery Club</b> would be a premium subscription where 
+                                    the customers would sign up for a yearly membership by paying $100 upfront and would receive free deliveries for the entire year. Prior to this event, a 
+                                    customer had to pay an upfront cost of $10 for every delivery. The Marketing Team sent out mailers to every customer and explained them about the Delivery Club.
+                                    The main goal of this campaign was to increase the sales. After implementing the campaign, the team wants to know if the campaign was successful or not. 
+                                    Therefore, my task for The ABC Grocery is to measure change after an event has occured. In this case, the event was the introduction of the "delivery club". 
+                                    I will be using <b>Causal Impact Analysis</b> for measuring this change. Causal impact analysis will help me understand the change in a key business metric after some event has taken place. 
+                                    The analysis helps in understanding the uplift in sales after a promotion or a product release, the increase in clicks or conversion, signups after an online ad campaign, change in 
+                                    share price after a market event or event the change in the value of the US dollar after change in presidency. The task is the same for every scenerio. I want to unerstand 
+                                    how big this change was after an event occured? To understand this, first and foremost I really need to understand what would have happened had the event not taken place.
+                                    <b>Causal Impact Analysis</b> will help me answer this question. Hence, I will be using the <b>Causal Impact Analysis</b> approach to solve ABC Grocery team's question.
+
+
+                                </p>
+
+                                            
+                                        <header>
+                                            <h2>Imlpementation</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul>
+                                            <li>The ABC Grocery team has provided us with excel files that contain data for transactions and campaign.</li>
+                                            <li>For reading the data I will use the <b>Pandas</b> library. Pandas has the read_excel functionality to read excel files.</li>
+                                            <li>I will convert the excel data into DataFrames of Transactions and Camaign_data respectively as Pandas DataFrames are easy for Data Manipulation.</li>
+                                            <li><b>Transactions</b> sheet contains rows for each product area for each transaction that any customer makes.</li>
+                                            
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/causal_imapct/causal_transactions.png" alt="" >
+                                            </div> 
+                                            
+                                            <li><b>Campaign_data</b> sheet contains unique records for every customer. There are two mailer types and a signup flag for each customer, i.e.
+                                            if a customer has signed up for the delivery club or not.</li>
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/causal_imapct/causal_campaign.png" alt="" >
+                                            </div>
+
+                                    </ul>
+                                    
+                                        
+                                        <header>
+                                            <h3>2. Data Preprocessing</h3>
+                                        </header>
+                                            <ul>
+                                                <li>I want to find out the average daily sales for the customers in each group. I will follow the following steps:</li>
+                                                <li><b><u>Step 1 - Customer daily sales:</u></b> To calculate the sum fo all the transactions for every customer based on transaction date. 
+                                                <br>To achieve this - I will 
+                                                use the <b>groupby</b> functionality of pandas to calculate the sum and then group the data based on customer_id and transaction_date.</li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/causal_imapct/causal_sum.png" alt="" >
+                                                </div>
+                                            
+                                                <li><b><u>Step 2 - Merge on signup flag:</u></b> Joining customer daily sales and campaign data to bring in all the columns for every customer who joined the delivery club 
+                                                , their sales cost, mailer type to represent the <b>mailers</b> and <b>control</b> group. The signup flag will represent the customers who joined the delivery club.
+                                                <br>
+                                                To achieve this - I will user the <b>merge</b> functionality of pandas that joins two different dataframes. I will inner join the two dataframes as I want to retrieve common columns 
+                                                for every customer_id.</li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/causal_imapct/causal_inner.png" alt="" >
+                                                </div>
+
+                                                <li><b><u>Step 3 - Pivot the data to aggregate daily sales based on signup flag: </u></b> To find the average daily sales for customers in signup group.
+                                                <br> To achieve this - I will create a different dataframe for causal impact. To pivot the table pandas has the <b>pivot_table</b> functionality that pivots the 
+                                                data based on different conditions. In my case, the parameters for index, columns, values and aggfunc would be transaction_date, signup_flag, sales_cost and mean as I 
+                                                want to create a dataframe that will contain average daily sales based on signup group.
+                                                <br>I will also convert the 1 and 0 signup_flag to a "member" and "non-member" to make the data more understandable.</li>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/causal_imapct/causal_pivot.png" alt="" >
+                                                </div>
+
+                                            </ul>
+                                        
+                                            
+                                            <header>
+                                                <h3>3. Model Building</h3>
+                                            </header>
+                                                <ul>
+                                                    <li>To Apply Causal Impact I will have to first declare the <b>Pre Period</b> and <b>Post Period</b> to compare the impact before the event and after the event took place.
+                                                    In this case the pre-period date range is from <b>2020-04-01</b> to <b>2020-06-30</b> and the post-period date range is from <b>2020-07-01</b> to <b>2020-09-30</b>. I will be comparing these two date ranges as 
+                                                    the marketing team implemented the Delivery CLub strategy in the month of July.</li>
+                                                    <li><b><u>Step 1 - Declaring Pre Period and Post Period:</u></b>
+                                                    <br>Create two variables that will hold the pre and post periods.</li> 
+                                                    <li><b><u>Step 2 - Build the Model:</u></b>
+                                                    <br> To implement Causal Impact Analysis I will first install the required package using: <b>pip install pycausalimpact</b> 
+                                                    <br> I will bring in the <b>CausalImpact</b> functionality from <b>causalimpact</b> package.</li>
+                                                    To run the Causal Impact Algorithm execute: <b>ci = CausalImpact(causal_impact_df, pre_period, post_period)</b>
+                                                    
+                                                </ul>
+
+
+                                            <br><header>
+                                                <h3>4. Results</h3> </header>
+                                                <ul><li>Creating the Plot using: <b>ci.plot()</b></li>
+                                                    
+                                                    <div class="gfg">
+                                                        <img class = "center-img" src="images/causal_imapct/causal_viz.png" alt="" >
+                                                    </div>
+
+                                                    <li>From the above plot we can observe a verticle line in the center - It is the date of the membership, i.e. <b>1st July 2020</b></li>
+                                                    <li>Everything to the left of the verticle line is the pre-period and everything to right of the verticle line is the post period.</li>
+                                                    <li>The top chart shows the actual data for the impacted group as the black line. So the actual average daily sales 
+                                                        for customers who did sign up to the membership.</li>
+                                                    <li>The blue dotted line shows us the counterfactual.</li>
+                                                    <li>The purple area around the blue dotted lines is the confidence interval around the counterfactual, i.e. the range in which the algorithm believes this prediction should fall in.</li>
+                                                    <li>The confidence interval is wider hence, the algorithm is less sure about its counterfactual prediction.</li>
+                                                    <li>Looking at the top chart, there is definitely an impact on sales caused by the membership and the customers appear to increase their daily 
+                                                    average sales after the impact. This is based on the customers who did not sign up.</li>
+                                                    <li>The second chart shows us the raw differences between the actual and the counterfactual values for each day, i.e. the difference between the blue line and the black line. These 
+                                                        differences are positive each day, meaning that there is a definite <b>uplift in sales</b>. 
+                                                    </li>
+                                                    <li>The final chart takes these daily changes and shows us the cumulative sum over time.</li>
+                                                 </ul>
+
+
+                                                 <br><header>
+                                                    <h3>5. Summary</h3> </header>
+                                                    <ul><li>Printing the Summary using: <b>print(ci.summary())</b></li>
+                                                        
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/causal_imapct/causal_summary.png" alt="" >
+                                                        </div>
+    
+                                                        <li>From the summary I can say that for the post period, the average actual daily sales per customer is $171.33 and the average daily sales for the counterfactual was $121.42.</li>
+                                                        <li>The absolute effect is just the difference between Actual and the Predicted values.</li>
+                                                        <li>The relative effect is the relative percentage increase in the post period i.e. 41.11%.</li>
+                                                        
+                                                     </ul>
+
+                                                     <br><header>
+                                                        <h3>6. Report</h3> </header>
+                                                        <ul><li>Printing the Summary Report using: <b>print(ci.summary(output = "report"))</b></li>
+                                                            <li>The summary report produced below shows the written representation of the table given in the summary section above.</li>
+                                                            
+                                                            <div class="gfg">
+                                                                <img class = "center-img" src="images/causal_imapct/causal_report.png" alt="" >
+                                                            </div>
+
+                                                         </ul>
+    
+                                                <header>
+                                                    <h3>5. Conclusion</h3>
+                                                </header>   
+                                                
+                                                <ul>
+                                                    <li>From the above analysis, we can conclude that after introducing the <b>Delivery Club</b> in the month of July 
+                                                    there has been an uplift of average sales per customer by <b>$171</b>. If the delivery club had not been introduced, the average daily sales 
+                                                    would have remained <b>$121</b>. Therefore, the marketing campaign of introducing the <b>Delivery Club</b> in the month of July 
+                                                    by The ABC Grocery team lead to an average uplift in sales by <b>$50</b>. </li>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
+</html>

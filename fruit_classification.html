@@ -1,0 +1,1242 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ankit Patil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <li class="active"><a href="index.html">Machine Learning</a></li>
+                        <!--<li><a href="statistics.html">Statistics</a></li> -->
+                        <li><a href="sql.html">SQL</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        
+                    </ul>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="fruit_classification.html">Image Classification</a></h2>
+									<p>This project aims to classify the fruits using Convolution Neural Networks.<br>
+                                        If the classification is achieved, the robotic arm will classify the images accordingly.
+										</p>
+								</header>
+								<a href="fruit_classification.html" class="image main"><img src="images/fruit_classification/fruits.jpg" alt="" /></a>
+							</article>
+                                
+                         
+                            <!-- Post -->
+                            <section class="post">
+                                
+                                <h2>Business Case</h2>
+                            </header>
+                            <h3> Message from the ABC Grocery Team - </h3>
+                            <blockquote>Hello Data Scientist,<br><br>
+                            We've had an interesting proposal put forward to us, and we need your help to assess whether it is viable!.<br><br>
+                            At a recent tech conference, we spoke to a contact from XYZ Robotics - a company that creates robotic solutions for companies, to help them scale and optimize their operations.<br>
+                            Their representative mentioned that they had built a prototype for a robotic sorting arm that could be used to pick up
+                             and move products off a platform. It would use a camera to "see" the product, and could be programmed to move that particular product into 
+                             a designated bin, for further processing.<br>
+                            The only thing they haven't figured out was how to actually identify each product using the camera, so that the robotic arm could move 
+                            it to the right place.<br><br>
+                            Do you know if this is possible? If we could put forward a solid proof of concept, XYZ Robotics have said we could get exclusive rights to the solution
+                            - and it would be a huge win for us in terms of speeding up sorting, and thus reducing costs.<br>
+                            We have provided you some data to use for testing - please let us know how you get on, as well as anything else you learn that will help us turn 
+                            this into reality on even more complex data.<br><br>
+
+                            Thanks in advance,<br>
+                            ABC Grocery Web Team
+
+                        </blockquote> <br><br>
+
+                        <h2>Abstract</h2>
+
+                                    <!-- Box -->
+									<div class="box">
+										<ul>
+                                            <li>A <b>Convolution Neural Network</b> is a deep learning neural network, a type of Artificial Neural Network that is used in image recognition. 
+                                            CNN is a type of network architecture which works on <b>pixels of data</b> to recognize images.</li>
+                                            <li>The task of this project is to train the model to recognize images so that the robotic arm will look at the fruits using its camera and bifurcate 
+                                                or move the fruits to the right place by its robotic arm.</li>
+                                            <li>CNN will help me traing the model using the image data provided by The ABC Grocery team. I will be using <b>keras and tensorflow</b> and methods such as 
+                                                <b>image augmentation, dropout, transfer learning</b> to recognize the images and figure out the best method for predicting images.
+                                            </li>
+
+                                        </ul>
+                                    
+									</div><br>
+
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Introduction</h2>
+                                </header>
+                                <p>The ABC Grocery Team had a conversation with the XYZ Robotics team - a company that helps in scaling and optimizing operations. The XYZ team had built a prototype
+                                    that would pick up products by its robotic hand and move the product. The robot used the camera to look at the product, and then use its arms to move the product.
+                                    The problem XYZ team faces is to figure out how to identify a product using the camera. 
+                                    The ABC Grocery Team wants me to look into this and come up with a solution to identify an image and train a model to recognize any image. 
+                                    Sorting the products would become much easier using the robotic arm
+                                    and thus reduce costs. The team has provided the data for different fruit images and asked me to look into this. I will be using Convolution Neural Networks, as CNN 
+                                    works great in case of image recognition and classical machine learning algorithms do not have the power to solve unsolvable problems. 
+                                    CNN works on pixels of data and is very helpful in classifying images eg. an image is a chiwawa or a muffin, finding sharks in the ocean, self driving cars, medical imaging, etc.
+                                    Therefore, I will leverage the power of Convolution Neural Networks to solve this problem.
+                                </p>
+
+                                   
+                                <header>
+                                    <h2>Implementation</h2>
+                                </header>
+
+                                <header>
+                                    <h3>1. Reading the data</h3>
+                                </header>
+
+                                <ul>
+                                    <li>The ABC Grocery Team has provided me with images that are separated in three files - training, test and validation respectively. The team has provided me with 
+                                        different images of fruits such as <b>apple, avocado, banana, kiwi, lemon, orange</b>. 
+                                    </li>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_data.png">
+                                    </div>
+                                    
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_types.png">
+                                    </div>
+
+
+                                    <li>
+                                        To read the images and feed the images to my CNN network for training I will use the <b>ImageDataGenerator</b> library which lies within <b>tensorflow.keras.preprocessing.image</b> package.
+                                    </li>
+                                </ul>
+
+                                <header>
+                                    <h3>2. Setting up the flow for Training and Validation</h3>
+                                </header>
+
+                                
+                                    <p>I will set up a pipeline for the images to flow from the local hardrive through to the CNN network. The reason for this is, the images separate files,
+                                        not like the csv or excel files where all the data resides in a single file. Also the images can be larger in size - due to the limitations of hard drive space,
+                                        I will create a pipeline like structure to bring in the images.
+                                    </p>
+                                
+                                    <ul>
+                                        <li><b><u>Data Flow Parameters</u></b>
+                                        <p>
+                                            The training and validation data resides in training and validation folders respectivel therefore, I will create two objects <b>training_data_dir</b> and <b>validation_data_dir</b>
+                                            to hold the training data and validation data.
+                                        
+                                        
+                                        </p>
+                                        </li>
+                                        <li><b><u>Batch Size</u></b>
+                                        <p>
+                                            As all the images cannot be passed in the memory at once, I will pass the images in batches of <b>32</b>. Therefore, I will create an object <b>batch_size</b>
+                                            that holds a number <b>32</b>. The batch of images will flow forward through the network and make predictions for that batch.
+                                        </p>
+                                        </li>
+
+                                        <li><b><u>Image Parameters</u></b>
+                                            <p>
+                                                I will specify the image width, image height as <b>128</b> and number of channels as <b>3</b> as I am dealing with colored images. 
+                                            </p>
+                                            </li>
+
+                                        <li><b><u>Prediction Classes</u></b>
+                                            <p>
+                                                The number of classes to predict are <b>6</b> - apple, avocado, bananas, kiwi, lemon, orange. Therfore, a parameter <b>num_classes</b>
+                                                to hold the 6 classes will be declared.
+                                            </p>
+                                        </li>
+
+
+                                        <li><b><u>Image Generator</u></b>
+                                            <p>
+                                                I have imported the <b>ImageDataGenerator</b> class to set up the image generator. ImageDataGenerator is used to rescale the images as they flow in.
+                                                The network will perform well if all of the images are normalized or if the data exists on the same scale. Therefore, I will normalize both the training and validation data.
+                                                To rescale the images I will use <b>1./255</b> - this means I will force pixel values for each RGB layer range between 0 and 255 to exist instead between 0 and 1 
+                                                Using a <b>Dot</b> in the division means I will definitely return a float value i.e. all the images will then be different.
+                                            </p>
+                                        </li>
+
+                                        <li><u><b>Image Flows</b></u>
+                                        <p>
+                                            I will create a <b>training_set</b> and a <b>validation_set</b> that will essentially send batch of images from my hard drive using <b>flow_from_directory</b> to the network.
+                                            The parameters for the training_set and validation_set would be the <b>training_data_dir</b> and <b>validation_data_dir</b> created above, the image <b>width, height</b>
+                                            and the <b>class_mode</b> as <b>categorical</b> as I am dealing with categorical data and multiclass classification.
+                                            
+                                        </p>
+                                        
+                                        <div class="gfg">
+                                            <img class = "center-img" src="images/image_classification/image_classes.png">
+                                        </div>
+
+                                        <p>
+                                            The above image shows that training set contains <b>360 images</b> that belong to 6 classes and validation set contains <b>180 images</b>
+                                            that belong to 6 classes.
+                                        </p>
+
+                                        </li>
+
+                                    </ul>
+                                
+                                    <header>
+                                        <h3>3. Network Architecture</h3>
+                                    </header>
+
+                                    <ul>
+                                        <li><u><b>Network Architecture for CNN</b></u>
+                                        <p>
+                                            To implement the network architecture for CNN, I will use the <b>Keras</b> library. Keras has made things easier to build network architectures.
+                                            There are two approaches to build the architecture - <b>Sequential</b> and <b>Functional</b>.
+                                            <br><br><b>Sequential Approach</b>: This approach helps to build network architecture from scratch in a sequential manner by adding or stacking layers and other neural network components on top of each other.
+                                            <br><br><b>Functional Approach</b>: This approach helps to build network architectures where we want specific layers to feed into the network for example, two different output layers feeding data into different input layers.
+                                            Functional approach allows non sequential or non linear networks to be built.
+                                           <br><br> In our case, I will be using the <b>Sequential Approach</b> as I want to build a network in a linear fashion.
+
+                                        <div class="gfg">
+                                            <img class = "center-img" src="images/image_classification/image_cnn.png">
+                                        </div>
+ 
+                                        </p>
+                                        
+                                        </li>
+                                    </ul>
+                                        <ol>
+                                            <li>To import the <b>Sequential</b> library, I will import it from <b>tensorflow.keras.models</b>.</li>
+                                            <li>To add the layers to the network I will import <b>Conv2D, MaxPooling2D, Activation, Flatten, Dense</b> from <b>tensorflow.keras.layers</b></li>
+                                            <li>Using <b>model.add</b> functionality I will stack the layers sequentially.</li>
+                                        </ol>
+                                        <ol>
+                                            <header>
+                                            <h3>Layer 1</h3>
+                                        </header>
+                                            <li><b>Convolution Layer</b>: To add the convolution layer I will use <b>Conv2D</b> as a parameter in model.add
+                                                <br> Conv2D takes different parameters:
+                                                <ul>
+                                                    <li><b>filters = 32</b>: This is the number of feature maps I want to create</li>
+                                                    <li><b>kernel_size = (3,3)</b>: This is the size of the filter i.e. 3*3 pixels</li>
+                                                    <li><b>stride</b>: The number of pixels we move across and then down for each iteration of our scan, by default it is set to 1</li>
+                                                    <li><b>padding = 'same'</b>: This will ensure that I am using all of my pixels</li>
+                                                    <li><b>input_shape</b>: I will add the image width, height and num_channels that I had declared above</li>
+                                                </ul>
+                                            </li>
+                                            <li><b>Activation Layer</b>: The next step is to pass the output from the convolutional layer to the <b>Activation Function</b> to add non linearity in the network. In Keras I can 
+                                            achieve this just by using <b>model.add(Activation('relu'))</b>.</li>
+                                            <li><b>Pooling Layer</b>: This layer will give me a more generalized feature level view of the image, reducing the size of the problem space and making image recognition more viable 
+                                            from a computational point of view. To Here I will add the max pooling layer to the network simply by using <b>model.add(MaxPooling2D())</b></li>
+                                        </ol>
+
+                                    <header>
+                                        <h3>Layer 2</h3>
+                                    </header>
+
+                                    <p>Layer 2 will take data from layer 1 hence, no need to input image width, height and num_channels in Convolutional layer. Layer 2 will contain the same three functionalities as follows:</p>
+                                    <ol>
+                                        <li><b>Convolutional Layer</b></li>
+                                        <li><b>Activation Layer</b></li>
+                                        <li><b>Pooling Layer</b></li>
+                                    </ol>
+
+                                    <header>
+                                        <h3>Layer 3</h3>
+                                    </header>
+
+                                    <p>
+                                        <b>Flatten Layer</b>: The dense layer need the data to be coming in one dimensional stack, and I now have the data in the form of 32 pooled feature maps. I need to flatten the feature maps.
+                                        Hence, I will create a new layer that flattens the feature maps.
+                                        <br> To achieve this I will use <b>model.add(Flatten())</b> to add the flatten layer to the network.
+                                    </p>
+                                    
+                                    <header>
+                                        <h3>Layer 4</h3>
+                                    </header>
+
+                                    <p>
+                                        <b>Dense Layer</b>: Dense Layer is used to classify image based on output from convolutional layers. Dense Layers will basically be set of 32 neurons
+                                        that will be connected to the output layer. This layer will also contain the <b>Activation Function</b> to add non linearity. 
+                                        To add the dense layer to the model I will use <b>model.add(Dense(32))</b>.
+                                    </p>
+
+                                    <header>
+                                        <h3>Layer 5</h3>
+                                    </header>
+
+                                    <p>
+                                        <b>Output Layer</b>: This is the final layer in the network that will contain 6 classes to classify the images. At every iteration backpropogation will occur 
+                                        and the weights will be adjusted to make predictions for each set of images and each set of batches.
+                                        I will use the <b>softmax</b> activation function as this function takes all the probability values and adds them to a total of 1.
+                                        <br> The output layer is also a dense layer therefore, to add this layer to the network I will use <b>model.add(Dense(num_classes))</b> and to add the softmax activation funtion 
+                                        I will use <b>model.add(Activation('softmax'))</b>
+                                    </p>
+
+                                    <header>
+                                        <h3>Compiling the Network</h3>
+                                    </header>
+
+                                    <p>
+                                        In the compilation part, we have to add a non architecture specific component while compiling i.e. the loss function I want, the optimizer I want to use, the metric I want to track during training.
+                                        To do this I will just use the <b>model.complile()</b> with parameters like:
+                                        <ol>
+
+                                            <li><b>loss = 'categorical_crossentropy'</b>: This is a multiclass classification problem hence, categorical_crossentropy</li>
+                                            <li><b>optimizer = 'adam</b>: Adam adapts based on the moving average of both current and past gradients</li>
+                                            <li><b>metrics = ['accuracy']</b>: This will be a list of metric that I want to track.</li>
+                                        </ol>
+                                    </p>
+
+                                    <header>
+                                        <h3>Network Architecture - Basic</h3>
+                                    </header>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_arch.png">
+                                    </div>
+
+                                    <p>
+                                        From the above figure I can see the summary of all of the layers of my network architecture.
+                                        <br> I can observe the layers, the shape, and parameters used.
+                                        <br> After flattening I can observe that the ddense layer has a input of total <b>1048608</b> parameters. These will be connected to all of the 32 features in the dense layer.
+                                        <br> At the bottom I can see there are are total number of trainable parameters in my network. I actually have <b>1,058,950</b> parameters.
+
+                                    </p>
+
+                                    <header>
+                                        <h3>Model Training</h3>
+                                    </header>
+
+                                    <p>
+                                        To train the model I will first determine the number of eopchs i.e. the number of times the model must go through the data. I will save 
+                                        the best model that has the maximum accuracy. To achieve this I will follow:  
+                                    </p>
+
+                                    <ol>
+                                        <li><b>Training Parameters</b>: I will declare the <b>number of eopchs</b> to be <b>50</b> i.e. the data will pass through the network 50 times and 
+                                            a parameter <b>filename</b> to save the best model at a specified path with extension <b>h5</b>. Keras stores the model architecture in an <b>h5</b> file format.
+                                        </li>
+                                        <li><b>Callbacks</b>: To save the best model any time during training, I will import and use the <b>ModelCheckpoint</b> functionality from <b>tensorflow.keras.callbacks</b>
+                                            to save the best model that has <b>maximum accuracy</b> by monitoring the <b>accuracy</b>. 
+                                        </li>
+                                        <li><b>Train the network</b>: To train the model I will iteratively pass batches of images in the model. For this I will use the <b>model.fit()</b>
+                                            functionality where I will pass the parameter values like <b>training_set, validation_set, number of epochs, batch size</b> and <b>callbacks</b>.
+                                            I will pass the validation data, as I want to know how well the model performed on the unseen data. 
+                                        </li>
+                                    </ol>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_model.png">
+                                    </div>
+
+                                    <p><b>Observations: </b>From the above model training epochs I can observe that as each epoch completes I get a summary of the training set as well as validation set.
+                                        Using the training set and validation set accuracy, I will be able to create a plot to spot any signs of overfitting. I can also observe that whenever 
+                                        the model hits a personal best, the model is saved in the h5 file.
+                                    </p>
+
+                                    <header>
+                                        <h3>Visualize Training and Validation Performance</h3>
+                                    </header>
+
+                                    <p>To visualize the performance of my model I will make use of the <b>matplotlib</b> library.</p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_performance.png">
+                                    </div>
+
+                                    <p><b>Observations:</b> 
+                                    <ol>
+                                        <li>The first plot shows the <b>network loss</b> after each epoch. Epochs are along the X-axis going up to 50 epochs.
+                                        The loss for training_set is show in <b>blue</b> and the loss for <b>validation set</b> is show in <b>orange</b>.</li>
+                                        <li>The second plot shows the <b>network classification accuracy</b> after each eopch for the training and validation sets.
+                                        The accuracy for training_set is show in <b>blue</b> and the accuracy for <b>validation set</b> is show in <b>orange</b>.</li>
+                                        <li>From the plots I can conclude that I am getting the best model performance after 10 or 20 epochs. After 10 or 20 epochs, there is not much improvement.
+                                        </li>
+                                        <li>The most important obsevation is the huge gap between orange and blue lines i.e. between validation performance and training performance.
+                                            This huge gap is <b>overfitting</b>. The model is learning from the features so well, that after 10 or 20 epochs the model is predicting the images perfectly <b>100% accuracy</b> on the training set
+                                            but on the validation set the accuracy does not cross <b>80%</b>. 
+                                        </li>
+                                        <li>I do not want overfitting to happen, I am risking the predictive performance on new data i.e. the model is not learning to generalize and will fail miserabely when new data comes in.
+                                            I will use <b>image augmentation, dropout, hyperparameter tuning</b> methods later on to try and eliminate overfitting.
+                                        </li>
+                                        <li>The best epoch maximim accuracy achieved is <b>81.11%</b></li>
+                                    </ol>
+                                    </p>
+                                
+
+                                    <header>
+                                        <h3>Making Predictions on Unseen Data - Basic</h3>
+                                    </header>
+
+                                    <p>
+                                        I need to make predictions on the unseen data. To implement this, I will have to load the best model, pass unseen data to the 
+                                        trained model and then make predictions. To achieve this I will implement the following steps:
+
+                                        <ol>
+                                            <li><b>Load the best model</b>:<br>
+                                                To load the best model, I will import the functionality <b>load_model</b> from <b>tensorflow.keras.models</b> and store the model to a object named <b>model</b>.
+                                            </li>
+                                            <li>
+                                                <b>Load the images</b>:<br>
+                                                    To manually import the image file and convert it to array so that Keras can deal with the image.
+                                                    For this I will import <b>load_img, img_to_array</b> functionalities from <b>tensorflow.keras.preprocessing.image</b>.
+                                            </li>
+
+                                            <li>
+                                                <b>Parameters for Predictions</b>:<br>
+                                                    The parameters for prediction are the same as I declared above <b>img_width = 128</b> and <b>img_height = 128</b>. The 
+                                                    sizes for the training images and test images must be the same to make prefect predictions on the test sets.
+                                                    <br> I will also create the list of labels for each of the predictions classes that include <b>apple, avodado, banana, kiwi, orange, lemon</b>.
+                                            </li>
+
+                                            <li>
+                                                <b>Image Preprocessing Function</b>:<br>
+                                                    This function will be used to bring in all the test images, convert the test images to arrays. The array will be of shape <b>(128, 128, 3)</b>
+                                                    i.e. images with width and size as 128 and 3 as RGB color channel value. But Keras expects an array that contains a batch of images and it wants to know 
+                                                    how many images are there in that batch. That means Keras is actually expecting an image with <b>4 Dimensions</b>. So I will introduce a new dimension 
+                                                    that Keras expects. To add a dimension I will make use of the <b>expand_dims</b> functionality gtom <b>numpy</b>. I will also normalize the pixel values 
+                                                    for each image in the test set. Similar to the training set.
+                                            </li>
+
+                                            <li>
+                                                <b>Image Prediction Function</b>:<br>
+                                                    This function will help me predict the image and how confident the model is to predict the images. Since I am predicting 6 classes,
+                                                    the output will be in terms of probabilities. 
+                                                    I will use the <b>predict</b> method that belongs to the model object and return the output as <b>predicted_label</b> and <b>predicted_probabilites</b>. 
+                                            </li>
+
+                                            
+                                            <li>
+                                                <b>Looping through the data</b>:<br>
+                                                    There are different folders for each of the fruits and I will loop over all the images to process the images,
+                                                    make predictions and append the probabilites to the objects.
+                                            </li>
+
+                                            <li>
+                                                <b>Creating Dataframe to Analyze</b>:<br>
+                                                    To put everything together in a much more useful and understandable format I will use <b>pandas</b> to create a 
+                                                    <b>Dataframe</b> with columns <b>actual_label, predicted_label, predicted_probability</b> and <b>filename</b> to see the 
+                                                    actual filename for that image to diagnose the images and why the network made such predictions for that image.
+                                                    I will also add a column <b>correct</b> that will contain boolean values if actual image and the predicted image is the same.
+                                            </li>
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/image_classification/image_predict.png">
+                                            </div>
+
+                                            <li>
+                                                <b>Overall test set Accuracy</b>:
+                                                    I will calculate the overall test set accuracy by adding all the <b>1's</b> and dividing them by the total number of rows.
+                                                    The accuracy I get is <b>81.11%</b>
+                                            </li>
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/image_classification/image_acc.png">
+                                            </div>
+
+                                            <li>
+                                                <b>Confusion Matrix</b>:
+                                                    To find out where the model is predicting perfectly and where the model is failing to predict I will create a confusion matrix.
+                                            </li>
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/image_classification/image_confu.png">
+                                            </div>
+
+                                            <p>
+                                                From the above matrix I can see the the row above as the actual classes and the columns are the predicted classes. For each class
+                                                I can get the classification accuracy. For example, there are 10 apples in total, out of which the model has predicted 8 apples correctly
+                                                and misclassified the remaining two as banana and kiwi.
+                                                <br>The model has correctly predicted all the avocados, the classification accuracy fro avocado is <b>100%</b>. 
+
+                                            </p>
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/image_classification/image_per.png">
+                                            </div>
+
+                                            <p>
+                                                The above matrix shows the classification accruracy percentages for each of the classes. For example, the classification accuracy 
+                                                for apples is <b>80%</b>. 
+                                            </p>
+
+                                        </ol>
+                                    </p>
+
+                                    <header>
+                                        <h3>Network Architecture - Dropout</h3>
+                                    </header>
+
+                                    <p>
+                                        Drop out method basically disregards the neurons in the network to make predictions, bakpropogates and then makes the final predictions.
+                                        The reason to do this is, a full network becomes more specific and very tuned for every single detail. To reduce this <b>Dropout</b> method is used.
+                                        In this method neurons are dropped at random for every iteration, results are aggregated like ensemble methods and this directly deals with overfitting. 
+                                        
+                                        From the image below I can see that some neurons in the network are dropped.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/img_dropout.png">
+                                    </div>
+
+                                    <p>
+                                        Dropouts are generally applied only to the <b>dense layer</b> and the proportion of layers that must be deactivated must be specified.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_drop.png">
+                                    </div>
+
+                                    <header>
+                                        <h3>Implementing Dropout Method</h3>
+                                    </header>
+
+                                    <p>
+                                        <ol>
+                                        <li>To implement dropout, I first need to bring in the <b>Dropout</b> functionality by importing it from <b>tensorflow.keras.layers</b>.
+                                        </li>
+                                        <li>The network architecture will be the same as I had done above, I will just add <b>Dropouts</b> in the dense layer by using <b>model.add(Dropout(0.5))</b>. This means that 
+                                        I have added dropouts to the dense layers and will drop 50% of the neurons.
+                                        </li>
+                                        <li>The network architecture will be the same but the neurons will be dropped randomnly for every iteration.</li>
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_arch.png">
+                                    </div>
+
+                                    <li>I will train the model for 50 epochs and look for training and validation accuracy as I monitored for the basic model.</li>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_drop_arch.png">
+                                    </div>
+
+                                    </ol>
+
+                                    <p><b>Observations: </b>From the above model training epochs I can observe that as each epoch completes I get a summary of the training set as well as validation set.
+                                        Using the training set and validation set accuracy, I will be able to create a plot to spot any signs of overfitting. I can also observe that whenever 
+                                        the model hits a personal best, the model is saved in the h5 file.
+                                    </p>
+
+
+                                    <header>
+                                        <h3>Visualize Training and Validation Performance</h3>
+                                    </header>
+
+                                    <p>To visualize the performance of my model I will make use of the <b>matplotlib</b> library.</p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_drop_viz.png">
+                                    </div>
+
+
+                                    <p><b>Observations:</b> 
+                                        
+                                        <ol>
+                                            <li>The first plot shows the <b>network loss</b> after each epoch. Epochs are along the X-axis going up to 50 epochs.
+                                            The loss for training_set is show in <b>blue</b> and the loss for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            <li>The second plot shows the <b>network classification accuracy</b> after each eopch for the training and validation sets.
+                                            The accuracy for training_set is show in <b>blue</b> and the accuracy for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            <li>From the plots I can conclude that I am getting the best model performance after 10 or 20 epochs. After 10 or 20 epochs, there is not much improvement.
+                                            </li>
+                                            <li>The most important obsevation is that for both the <b>loss</b> and <b>accuracy</b> are trending along together, increasing or decreasing at the same rate.
+                                                The classification accuracy never gets around 100% for the training set, this means that I am seeing generalization in the model and the model is not overfitting.
+                                                This concludes that neurons are not hard wired to some features in the network, every neuron gets a chance to predict the outcome. 
+                                            </li>
+                                            
+                                            <li>The best epoch maximum accuracy achieved is <b>89.99%</b></li>
+                                        </ol>
+                                        The aim of <b>Dropout</b> method was to counter the problem of overfitting, and the above plot shows that overfitting has reduced drastically.
+                                    </p>
+
+
+                                    <header>
+                                        <h3>Making Predictions on Unseen Data - Dropout</h3>
+                                    </header>
+
+                                    <p>
+                                        I will execute all the same steps from the basic method to test on unseen data.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_drop_test.png">
+                                    </div>
+                                    <br>
+
+                                    <p>
+                                        <b>Overall test set Accuracy</b>:
+                                            I will calculate the overall test set accuracy by adding all the <b>1's</b> and dividing them by the total number of rows.
+                                            The accuracy I get is <b>85%</b>
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_acc.png">
+                                    </div>
+
+
+                                    <p>
+                                        <b>Confusion Matrix</b>:
+                                            To find out where the model is predicting perfectly and where the model is failing to predict I will create a confusion matrix.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_drop_conf.png">
+                                    </div>
+
+                                    <p>
+                                        From the above matrix I can see the row above as the actual classes and the columns are the predicted classes. For each class
+                                        I can get the classification accuracy. For example, there are 10 apples in total, out of which the model has predicted 8 apples correctly
+                                        and misclassified the remaining two as kiwi.
+                                        <br>The model has correctly predicted all the avocado, lemon and orange with the classification accuracy of <b>100%</b>. 
+
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_drop_prob.png">
+                                    </div>
+
+                                    <p>
+                                        The above matrix shows the classification accruracy percentages for each of the classes. For example, the classification accuracy 
+                                        for apples is <b>80%</b>. The model is still unsure about <b>bananas</b> and <b>kiwi</b>.
+                                    </p>
+
+
+                                    <header>
+                                        <h3>Network Architecture - Image Augmentation</h3>
+                                    </header>
+
+                                    <p>
+                                        My task for the ABC Grocery is to classify the fruit images and I have been provided the data for different fruits to train my model.
+                                        But in the real world, there can be different fruits with different sizes and shapes that the model will not understand. 
+                                        There must be a way to increase the variation in the training data so that when a new image comes in, the model will be able to predict
+                                        the image perfectly.
+                                        <br>
+                                        <b>Image Augmentation</b> basically transforms a single image to multiple images with different shapes and sizes with different rotations and zoomed in, zoomed out images.
+                                        This variation creates many different images for the model to train on. Every epoch will be pass a different image to the training network.
+                                    </p>
+
+                                    <header>
+                                        <h3>Implementation - Image Augmentation</h3>
+                                    </header>
+
+                                    <p>
+                                        Image Augmentation can be implemented using <b>ImageDataGenerator</b> class that lies in <b>tensorflow.keras.preprocessing.image</b>
+                                        This class takes parameters as follows:
+                                        <ol>
+                                            <li><b>rotation_range</b>: The rotation value for the image to be rotated</li>
+                                            <li><b>width_shift_range</b>: Moving the image left or right</li>
+                                            <li><b>height_shift_range</b>: Moving the image up or down</li>
+                                            <li><b>zoom_range</b>: Making the image larger or smaller</li>
+                                            <li><b>horizontal_flip</b>: Flipping the image horizontally, creating mirror image</li>
+                                            <li><b>shear_range</b>: Shifting one part of the image in one direction and other part in other direction</li>
+                                            <li><b>brightness_range</b>: Values less that 1.0 will darken the image and greater will brighten the image</li>
+                                            <li><b>fill_mode</b>: Filling the newly created pixels with the nearest pixels</li>
+                                        </ol>
+                                    </p>
+
+                                    <ul>
+                                        <li>
+                                            I will apply image augmentation only on the training data, not on the validation ot test data as I want test if the validation accuracy 
+                                            and test accuracy is increasing or not with respect to other methods.
+                                        </li>
+                                        <li>I will rescale and add the augmentation parameters to the training data</li>
+                                        <li>I will rescale the validation data as done in basic network</li>
+                                        <li>I will create the basic network architecture without using dropout for better understanding</li>
+
+                                        <div class="gfg">
+                                            <img class = "center-img" src="images/image_classification/image_aug_model.png">
+                                        </div>
+
+                                    </ul>
+
+                                    <p><b>Observations: </b>From the above model training epochs I can observe that as each epoch completes I get a summary of the training set as well as validation set.
+                                        Using the training set and validation set accuracy, I will be able to create a plot to spot any signs of overfitting. I can also observe that whenever 
+                                        the model hits a personal best, the model is saved in the h5 file.
+                                    </p>
+
+                                    <header>
+                                        <h3>Visualize Training and Validation Performance</h3>
+                                    </header>
+
+                                    <p>To visualize the performance of my model I will make use of the <b>matplotlib</b> library.</p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_aug_viz.png">
+                                    </div>
+
+
+                                    <p><b>Observations:</b> 
+                                        
+                                        <ol>
+                                            <li>The first plot shows the <b>network loss</b> after each epoch. Epochs are along the X-axis going up to 50 epochs.
+                                            The loss for training_set is show in <b>blue</b> and the loss for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            <li>The second plot shows the <b>network classification accuracy</b> after each eopch for the training and validation sets.
+                                            The accuracy for training_set is show in <b>blue</b> and the accuracy for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            
+                                            </li>
+                                            <li>The most important obsevation is that for both the <b>loss</b> and <b>accuracy</b> are trending along at the same rate.
+                                                The classification accuracy never gets around 100% for the training set, this means that I am seeing generalization in the model and the model is not overfitting.
+                                                This concludes that as the images are different the model does not cling to a single version and there is no overfitting.
+                                            </li>
+                                            
+                                            <li>The best epoch maximum accuracy achieved is <b>96.66%</b></li>
+                                        </ol>
+                                        The aim of <b>Image Augmentation</b> method was to counter the problem of overfitting, and create a more generalised verison of the model.
+                                    </p>
+
+
+                                    <header>
+                                        <h3>Making Predictions on Unseen Data - Image Augmentation</h3>
+                                    </header>
+
+                                    <p>
+                                        I will execute all the same steps from the basic method to test on unseen data.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_aug_df.png">
+                                    </div>
+                                    <br>
+
+                                    <p>
+                                        <b>Overall test set Accuracy</b>:
+                                            I will calculate the overall test set accuracy by adding all the <b>1's</b> and dividing them by the total number of rows.
+                                            The accuracy I get is <b>100%</b>
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_aug_acc.png">
+                                    </div>
+
+
+                                    <p>
+                                        <b>Confusion Matrix</b>:
+                                            To find out where the model is predicting perfectly and where the model is failing to predict I will create a confusion matrix.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_aug_conf.png">
+                                    </div>
+
+                                    <p>
+                                        From the above matrix I can see the row above as the actual classes and the columns are the predicted classes. For each class
+                                        I can get the classification accuracy. For example, there are 10 apples in total, out of which the model has predicted 10 apples correctly.
+                                        
+                                        <br>The model has correctly predicted all the fruits with the classification accuracy of <b>100%</b>. 
+
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_aug_prob.png">
+                                    </div>
+
+                                    <p>
+                                        The above matrix shows the classification accruracy percentages for each of the classes. For example, the classification accuracy 
+                                        for all the fruits is <b>100%</b>. 
+                                    </p>
+  
+
+                                    <header>
+                                        <h3>Transfer Learning</h3>
+                                    </header>
+
+                                    <p>Transfer Learning consists of taking features learned from one problem and leverageing them on a new simpler problem.
+                                        The convolution layer, pooling layers and the flattening layers (CNN Layers) takes already learned features i.e. the model freezes 
+                                        all the leayers except dense and output layers and trains only the dense 
+                                        layers. Transfer Learning assumes that the learned features are good enough to differentiate between different classes. This saves a whole 
+                                        lot of training time. 
+                                    </p>
+
+                                    <p>I will be making use of the already built <b>VGG16</b> network. VGG16 is a very famous network which was trained on over a million images 
+                                    from the Image Net dataset. I will not retrain the architecture, I will just use this pretrained network. I will just transfer this learning to my problem and oredict the images.</p>
+                                    
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_transfer_vgg16.png">
+                                    </div>
+
+                                    <header>
+                                        <h2>Network Architecture - Transfer Learning</h2>
+                                    </header>
+
+                                    <p>To implement the <b>VGG16</b> model I will implement all the steps from the basic network and make the following modifications</p>
+
+                                    <h3>Importing Required Packages</h3>
+                                    <ol>
+                                        <li><b>Import VGG16</b>: To bring the VGG16 functionality import the library from <b>tensorflow.keras.applications.vgg16</b></li>
+                                        <li><b>Import preprocess_input</b>: VGG16 believes to function properly with a certain preprocessing, hence I will bring in the functionality from <b>tensorflow.keras.applications.vgg16</b></li>
+                                        
+                                    </ol>
+
+                                    <h3>Set up flow for training and validation</h3>
+
+                                    <ol>
+                                        <li><b>Image Dimensions</b>: VGG16 need the image width and height to be 224.</li>
+                                    
+                                    </ol>
+
+                                    <h3>Image Generators - Training</h3>
+
+                                    <ol>
+                                        <li><b>preprocessing_function</b>: Must have the value <b>preprocess_input</b></li>
+                                        <li><b>rotation_range</b>: The rotation value for the image to be rotated</li>
+                                            <li><b>width_shift_range</b>: Moving the image left or right</li>
+                                            <li><b>height_shift_range</b>: Moving the image up or down</li>
+                                            <li><b>zoom_range</b>: Making the image larger or smaller</li>
+                                            <li><b>horizontal_flip</b>: Flipping the image horizontally, creating mirror image</li>
+                                            <li><b>shear_range</b>: Shifting one part of the image in one direction and other part in other direction</li>
+                                            <li><b>brightness_range</b>: Values less that 1.0 will darken the image and greater will brighten the image</li>
+                                            <li><b>fill_mode</b>: Filling the newly created pixels with the nearest pixels</li>
+                                    </ol>
+
+                                    <h3>Image Generators - Validation</h3>
+
+                                    <p><b>Validation</b> will just contain the preprocessing function <b>preprocess_input</b> to preprocess the input according to VGG16,
+                                    I do want the learning to happen on validation set.</p>
+
+
+                                    <h3>Network Architecture</h3>
+
+                                    <ol>
+                                        <li><b>VGG16</b>: Bring in VGG16 with inputs as image width, height and input channels and not the dense layers using <b>include_top = False</b></li>
+                                        <li><b>Freeze layers</b>: Freeze the convolution, pooling and flattening layers as I just want dense and output layers during back propogation</li>
+                                        <li><b>Flatten layer</b>: As I am using softmax function in the end I will flatten the data and specify the input from <b>vgg.output</b></li>
+                                        <li><b>Dense layer</b>: To replicate VGG16 I will add two dense layers with 128 neurons each as my task is much simpler with inputs from flatten and dense layers</li>
+                                        <li><b>Output Layer</b>: Output layer is also considere as a dense layer hence, I just need to change the activation function to <b>softmax</b></li>
+                                        <li><b>Specify inputs and outputs</b>: As functional api is used, explicitely specify inputs and outputs using <b>vgg.inputs</b> and <b>output</b></li>
+                                        <li><b>Compile</b>: Compile the model</li>
+                                    </ol>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_vgg_arch.png">
+                                    </div>
+
+                                    <p>From the above architecture I can see that extra layers have been added to the architecture. I also have a mix of trainable and non-trainable parameters.</p>
+
+                                    <h3>Training the Model</h3>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_transfer_model.png">
+                                    </div>
+                                    
+                                    <p><b>Observations: </b>From the above model training epochs I can observe that as each epoch completes I get a summary of the training set as well as validation set.
+                                        Using the training set and validation set accuracy, I will be able to create a plot to spot any signs of overfitting. I can also observe that whenever 
+                                        the model hits a personal best, the model is saved in the h5 file.
+                                    </p>
+
+                                    <h3>Visualize Training and Validation Performance</h3>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_trans_viz.png">
+                                    </div>
+
+
+                                    <p><b>Observations:</b> 
+                                        
+                                        <ol>
+                                            <li>The first plot shows the <b>network loss</b> after each epoch. Epochs are along the X-axis going up to 50 epochs.
+                                            The loss for training_set is show in <b>blue</b> and the loss for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            <li>The second plot shows the <b>network classification accuracy</b> after each eopch for the training and validation sets.
+                                            The accuracy for training_set is show in <b>blue</b> and the accuracy for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            
+                                            </li>
+                                            <li>The most important obsevation is that for both the <b>loss</b> and <b>accuracy</b> are trending along at the same rate.
+                                                The classification accuracy never gets around 100% for the training set, this means that I am seeing generalization in the model and the model is not overfitting.
+                                                This concludes that as the images are different the model does not cling to a single version and there is no overfitting.
+                                            </li>
+                                            
+                                            <li>The best epoch maximum accuracy achieved is <b>94.44%</b> within just 10 epochs.</li>
+                                        </ol>
+                                        The aim of <b>Transfer Learning</b> method was to use the pre learned model and apply to our problem of image classification.
+                                    </p>
+
+                                    <header>
+                                        <h3>Making Predictions on Unseen Data - Transfer Learning</h3>
+                                    </header>
+
+                                    <p>
+                                        I will execute all the same steps from the basic method to test on unseen data.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_trans_df.png">
+                                    </div>
+                                    <br>
+
+                                    <p>
+                                        <b>Overall test set Accuracy</b>:
+                                            I will calculate the overall test set accuracy by adding all the <b>1's</b> and dividing them by the total number of rows.
+                                            The accuracy I get is <b>95%</b>
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_trans_acc.png">
+                                    </div>
+
+
+                                    <p>
+                                        <b>Confusion Matrix</b>:
+                                            To find out where the model is predicting perfectly and where the model is failing to predict I will create a confusion matrix.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_trans_conf.png">
+                                    </div>
+
+                                    <p>
+                                        From the above matrix I can see the row above as the actual classes and the columns are the predicted classes. For each class
+                                        I can get the classification accuracy. For example, there are 10 avocados in total, out of which the model has predicted 10 avocados correctly.
+                                        
+                                        <br>The model has correctly predicted avocado, banana, kiwi, orange with the classification accuracy of <b>100%</b>. 
+
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_trans_probs.png">
+                                    </div>
+
+                                    <p>
+                                        The above matrix shows the classification accruracy percentages for each of the classes. For example, the classification accuracy 
+                                        for avocado, banana, kiwi, orange fruits is <b>100%</b>. 
+                                    </p>
+
+
+                                    <header>
+                                        <h2>Keras Tuner</h2>
+                                    </header>
+
+                                    <p>Till now I have used the basic architecture, dropout architecture, image augmentation, transfer learning. All of the architecure just worked fine with 
+                                        transfer learning being the best. What if there was no transfer learning and I just wanted to use my own architecture and modify it to get maximum accuracy.
+                                        <b>Keras</b> provides the functionality of <b>Keras Tuner</b> to tune the algorithms for maximum benefits. I will make use of Keras Tuner to make my own
+                                        optimal architecture for image classification.
+                                    </p>
+
+                                    <h3>Implementing Kears Tuner</h3>
+
+                                    <p>The code for the Keras Tuner will be the same as the basic architecture with couple of modifications.</p>
+
+                                    <h3>Importing required packages</h3>
+
+                                    <ol>
+                                        <li><b>Random Search</b>: Import this package from <b>keras_tuner.tuners</b></li>
+                                        <li><b>Hyperparameters</b>: Import this package from <b>keras_tuner.engine.hyperparameters</b></li>
+                                    </ol>
+
+                                    <h3>Setting up training and validation sets</h3>
+
+                                    <p>This sections remains the same as the basic architecture</p>
+
+                                    <h3>Architecture Tuning</h3>
+
+                                    <p>I want the Keras Tuner to go through different parameters to find the maximum accuracy. I will find the optimal architecture with optimal 
+                                        set of parameters to find the best architecture for classification. To test the parameter range I will create a function and return the model at the end.
+                                    </p>
+
+                                    <ol>
+                                        <li><b>Filters for Conv2D layer 1</b>: Filters in a range of 32 to 128 with step size 32 will be assigned to min_value, max_value and step_size for filters in layer 1 with input parameters for widht, height and num channels</li>
+                                        <li><b>Filters for Conv2D layer 2</b>: Test 1 or 2 layers that best work for the network</li>
+                                        <li><b>Flatten Layer</b>: Flatten the layer to stack all the values</li>
+                                        <li><b>Dense Layer</b>: Testing for number of dense layers and the potential number of neurons for each layer</li>
+                                        <li><b>Dropout</b>: Dropout neurons based on the proportion of 0.5% and also test that data with and without dropout</li>
+                                        <li><b>Output Layer</b>: Add 6 classes for 6 fruit classificaion values</li>
+
+                                    </ol>
+
+                                    <h3>Compiling the Network</h3>
+
+                                    <p>I will comppile the network based on the parameter choice. I will input 2 choices for optimizers: <b>adam</b> and <b>RMSProp</b></p>
+
+                                    <h3>Returning the best Tuned Results</h3>
+
+                                    <p>To search the best tuned model I will use the <b>RandomSearch</b> functionality that I had imported with parameters like:</p>
+                                    <ol>
+                                        <li><b>hypermodel</b>: The model function that I created above</li>
+                                        <li><b>objective</b>: The goal is to find maximum validation accuracy</li>
+                                        <li><b>max_trials</b>: Randomnly try a maximum of 3 iterations or else this will take a lot of time</li>
+                                        <li><b>executions_per_trial</b>: Each configuration will run a specified number of times</li>
+                                        <li><b>directory</b>: Place the results in the specified directory</li>
+                                        <li><b>project_name</b>: Folder in the directory</li>
+                                        <li><b>overwrite</b>: Overwrite the model, ideally this must be set to False as I want to compare the values</li>
+
+                                    </ol>
+
+                                    <p><b>Actual Testing</b>: Testing will be done using <b>tuner.search()</b> with parameters for training set, validation set, number of epochs and batch size.</p>
+
+                                    <p><b>Trial One</b></p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_tuner_trial1.png">
+                                        <img class = "center-img" src="images/image_classification/t1.png">
+                                    </div>
+
+                                    <p><b>Trial Two</b></p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_tuner_trial2.png">
+                                        <img class = "center-img" src="images/image_classification/t2.png">
+                                    </div>
+
+                                    <p><b>Trial Three</b></p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/image_tuner_trial3.png">
+                                        <img class = "center-img" src="images/image_classification/t3.png">
+                                    </div>
+
+
+                                    <p>From the above trials I can observe that maximum validation accuracy is reached after evey epoch.</p>
+
+                                    <h3>Summary of Tuner</h3>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_summary.png">
+                                    </div>
+
+                                    <p>The above image shows the best summary results for the tuner. I have used only 3 epochs so I have low accuracy for now</p>
+
+                                    <h3>Best Network - Hyperparameters</h3>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_best_hyp.png">
+                                    </div>
+
+                                    <p>From the image above I can recreate this network by using just these parameters instead of training and tuining all the parameters</p>
+
+                                    <h3>Summary of Best Network Architecture</h3>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_network.png">
+                                    </div>
+
+                                    <p>To make things more understandable I can view the network architecture.</p>
+
+                                    <h3>Best Network</h3>
+
+                                    <p>I have already tested the for 50 epochs and also increased the filter values and have got an optimal model.</p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_optimal.png">
+                                        <br>
+                                        <img class = "center-img" src="images/image_classification/t_best.png">
+                                    </div>
+
+
+                                    <h3>Training the Model</h3>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_model.png">
+                                    </div>
+                                    
+                                    <p><b>Observations: </b>From the above model training epochs I can observe that as each epoch completes I get a summary of the training set as well as validation set.
+                                        Using the training set and validation set accuracy, I will be able to create a plot to spot any signs of overfitting. I can also observe that whenever 
+                                        the model hits a personal best, the model is saved in the h5 file.
+                                    </p>
+
+                                    <h3>Visualize Training and Validation Performance</h3>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_viz.png">
+                                    </div>
+
+
+                                    <p><b>Observations:</b> 
+                                        
+                                        <ol>
+                                            <li>The first plot shows the <b>network loss</b> after each epoch. Epochs are along the X-axis going up to 50 epochs.
+                                            The loss for training_set is show in <b>blue</b> and the loss for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            <li>The second plot shows the <b>network classification accuracy</b> after each eopch for the training and validation sets.
+                                            The accuracy for training_set is show in <b>blue</b> and the accuracy for <b>validation set</b> is show in <b>orange</b>.</li>
+                                            
+                                            </li>
+                                            <li>The most important obsevation is that for both the <b>loss</b> and <b>accuracy</b> are trending along at the same rate.
+                                                The classification accuracy never gets around 100% for the training set as i have used image augmentation and dropout, this means that I am seeing generalization in the model and the model is not overfitting.
+                                                This concludes that as the images are different the model does not cling to a single version and there is no overfitting.
+                                            </li>
+                                            
+                                            <li>The best epoch maximum accuracy achieved is <b>96.66%</b> with 50 epochs</li>
+                                        </ol>
+                                        The aim of <b>Keras Tuner</b> method was to create my own model to get maximum accuracy to that of the pervious methods.
+                                    </p>
+
+                                    <header>
+                                        <h3>Making Predictions on Unseen Data - Transfer Learning</h3>
+                                    </header>
+
+                                    <p>
+                                        I will execute all the same steps from the basic method to test on unseen data.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_df.png">
+                                    </div>
+                                    <br>
+
+                                    <p>
+                                        <b>Overall test set Accuracy</b>:
+                                            I will calculate the overall test set accuracy by adding all the <b>1's</b> and dividing them by the total number of rows.
+                                            The accuracy I get is <b>95%</b>
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_acc.png">
+                                    </div>
+
+
+                                    <p>
+                                        <b>Confusion Matrix</b>:
+                                            To find out where the model is predicting perfectly and where the model is failing to predict I will create a confusion matrix.
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_conf.png">
+                                    </div>
+
+                                    <p>
+                                        From the above matrix I can see the row above as the actual classes and the columns are the predicted classes. For each class
+                                        I can get the classification accuracy. For example, there are 10 avocados in total, out of which the model has predicted 10 avocados correctly.
+                                        
+                                        <br>The model has correctly predicted avocado, banana, lemon with the classification accuracy of <b>100%</b>. 
+
+                                    </p>
+
+                                    <div class="gfg">
+                                        <img class = "center-img" src="images/image_classification/t_prob.png">
+                                    </div>
+
+                                    <p>
+                                        The above matrix shows the classification accruracy percentages for each of the classes. For example, the classification accuracy 
+                                        for avocado, banana,lemon fruits is <b>100%</b>. 
+                                    </p>
+
+
+
+                                    <header>
+                                        <h2>Conclusions</h2>
+                                    </header>
+
+                                    <p>
+                                        In the above analysis I have used different architectures - Basic, Dropout, Image Augmentation, Transfer Learning and Keras Tuner.
+                                        The best two model performances have been seen by <b>Transfer Learning</b> and <b>keras Tuner</b>. I can go to The ABC Grocery team and confidently 
+                                        say that I am capable of training a model to predict the images and transfer this trained model to the robotic arm to classify the images and place 
+                                        the fruits in respective sections. I can also suggest them to provide me with other product images and I will be able to classify them accordingly.
+                                        This will save The ABC Grocery team's costs of operating considerably.
+                                    </p>
+
+                            
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
+</html>

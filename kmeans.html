@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ankit Patil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science</a>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <li class="active"><a href="index.html">Machine Learning</a></li>
+                        <!--<li><a href="statistics.html">Statistics</a></li> -->
+                        <li><a href="sql.html">SQL</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        
+                    </ul>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="principal.html">Customer Segmentation</a></h2>
+									<p>This project aims to segment the customers based on their shopping habits.<br />
+										</p>
+								</header>
+								<a href="principal.html" class="image main"><img src="images/kmeans/veggies.jpeg" alt="" /></a>
+							</article>
+                                
+                         
+                            <!-- Post -->
+                            <section class="post">
+                                
+                                <h2>Business Case</h2>
+                            </header>
+                            <h3> Message from the ABC Grocery Team - </h3>
+                            <blockquote>Hello Data Scientist,<br><br>
+                                We've been really impressed with your work so far, it's made a huge impact! We have another task that we're not sure how to solve, and we 
+                                figured you might be able to help!
+                                <br>
+                                Our Senior Management Team can't quite agree on how to think about different types of grocery customers that are shopping with us.
+                                Some of the team think that everyone buys from all the food departments, juts varying amounts depending on how mant are in their household.
+                                Others in the team think there are specific diets or preferences at play, meaning that some customers shop or don't shop in certain 
+                                product areas due to their lifestyles.
+                                <br>
+                                We don't really know how to tackle this problem - but since you're the data experts, would you be able to look through the data,
+                                and if possible, try to "segment" up the customers based on any differences you find?
+                                <br>
+                                If there are different groups within the customer base, please report back and we can discuss how we might go about using these insights in practice.
+                                We'd be really excited to understand there so we can serve our customers in a more targeted way!
+                            <br><br>
+
+                            Thanks in advance,<br>
+                            ABC Grocery Web Team
+
+                        </blockquote> <br><br>
+
+                        <h2>Abstract</h2>
+
+                                    <!-- Box -->
+									<div class="box">
+									<ul>
+                                        <li><b>K-Means Clustering</b> partitions data into distinct groups based on their similarity with each other. The number of <b>distinct groups</b> 
+                                        is determined by the value of <b>K</b>.</li>
+                                        <li>The task of this project is to segment the customers based on their buying habits and figure out the type of groceries that the customers are shopping at 
+                                            The ABC Grocery. 
+                                        </li>
+                                        <li>K-Means Clustering will help me understand if there are <b>distinct patterns or differences</b> in the product areas that the customers are shopping in. 
+                                        </li>
+                                            
+                                    </ul>
+                                    
+									</div><br>
+
+                                <!-- Post -->
+                                <section class="post">
+                                
+                                    <h2>Introduction</h2>
+                                </header>
+                                <p> 
+                                    The ABC Grocery's senior management team are facing with an issue with customer segmentation. Some of the members think that the customers buy products from all the food departments,
+                                    some think that the customers buy according to specific diets, while some think that the customers don't shop in certain areas due to their lifestyles. There has been a debate related to 
+                                    this within the management and they want this confusion to be solved. The team has provided me with the data of customers and have been given this task to find out differences in the customer buying habits.
+                                    I have to segment the customers based on the products they buy in The ABC Grocery store and provide insights to the team for them to make knowledgeable business decisions.
+                                    Since the management is talking about differences and partitioning customers based on these differences, it does seems like a good use case for clustering. And since 
+                                    I know how <b>K-Means Clustering Algorithm</b> works, I will be leveraging this algorithm to figure out the difference in this <b>unsupervised learning</b> task.
+
+                                </p>
+
+                                            
+                                
+                                        <header>
+                                            <h2>Imlpementation</h2>
+                                        </header>
+
+                                        <header>
+                                            <h3>1. Reading the data</h3>
+                                        </header>
+                                        <ul>
+                                            <li>The ABC Grocery team has provided me with excel files that contain data for transactions and product areas in different sheets.</li>
+                                            <li>For reading the data for <b>Transactions</b> and <b>Product_areas</b> I will use the <b>Pandas</b> library. Pandas has the read_excel functionality to read the two sheets respectively.</li>
+                                            <li>I will convert the excel data into DataFrame as Pandas DataFrames are easy for Data Manipulation.</li>
+                                            <li> Below is the data for the Transactions table.</li>
+                                            
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/kmeans/kmeans_trans.png">
+                                            </div> 
+
+                                            <li> Below is the data for the Product Areas table.</li>
+
+                                            <div class="gfg">
+                                                <img class = "center-img" src="images/kmeans/kmeans_pareas.png">
+                                            </div> 
+                                            
+                                    </ul>
+                                    
+                                        
+                                        <header>
+                                            <h3>2. Data Preprocessing</h3>
+                                        </header>
+                                            <ul>
+                                                <li>I want a dataframe which shows percentage sales for each product area for each customer. To achieve this I will perform the following steps:</li>
+                                                <li><b><u>Step 1 - Inner Join transactions and product areas:</u></b>
+                                                    <br> I want the sales for every customer for every product area therefore, I will inner join transactions and product_areas with the common column <b>product_area_id</b>
+                                                    <br> I will use the <b>merge</b> functionality of <b>Pandas</b> to join the tables with parameters <b>how = "inner"</b> and <b>on = "product_area_id"</b> to inner join transactions and product areas.
+
+                                                </li>
+                                                
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/kmeans/kmeans_inner.png" alt="" >
+                                                </div>
+
+                                                <li><b><u>Step 2 - Dropping Non-Food category: </u></b> 
+                                                    <br>The senior management is just concerned with the food category, hence I will drop the non-food category from product_area_name.
+                                                    <br>To achieve this - I will use the <b>drop</b> functionality of Pandas to drop the <b>Non-Food</b> category from <b>product_area_name</b>.
+                                                </li>
+
+
+                                                <li><b><u>Step 3 - Aggregate sales at customer level: </u></b> 
+                                                    <br>I want to aggregate the sales at customer level based on each product area, i.e. how much a customer spent on each product area in total.
+                                                    <br>To achieve this - I will use the <b>groupby</b> functionality of Pandas group the data based on <b>customer_id</b> and <b>product_areas</b> and then calculate the <b>total_sales</b> by using the aggregate function <b>sum()</b>.
+                                                </li>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/kmeans/kmeans_sum.png">
+                                                </div>
+                                                
+
+                                                <li><b><u>Step 4 - Pivoting the Data: </u></b> 
+                                                    <br>To visualize the data properly in a tabular format, I will pivot the table to convert columns to rows.
+                                                    <br>To achieve this - I will use the <b>pivot_table</b> functionality of Pandas turn the columns into rows with parameters for <b>index = "customer_id"</b>,
+                                                    <b>column_names = "product_area_names"</b>, <b>values = "sales_cost"</b> and the aggregate function <b>aggfunc = "sum"</b>.
+                                                </li>
+
+                                                <div class="gfg">
+                                                    <img class = "center-img" src="images/kmeans/kmeans_pivot.png">
+                                                </div>
+                                                
+
+                                                <li><b><u>Step 5 - Turning sales to percentage sales: </u></b> 
+                                                    <br>I will convert all the sales to percentage sales.
+                                                    <br>To achieve this - I will use the <b>div</b> functionality of Pandas divide all the data by <b>total</b> column.
+                                                    <br> I will also drop the total column after the above calculation as I will not be needing the total column.
+
+                                                    <div class="gfg">
+                                                        <img class = "center-img" src="images/kmeans/kmeans_per.png">
+                                                    </div>
+
+
+                                                </li>
+
+                                                <li><b><u>Step 6 - Checking missing values: </u></b> 
+                                                    <br> I will eliminate any missing values if there are any as I don't want any missing data.
+                                                    <br>To achieve this - I will use <b>MinMaxScaler</b> functionality of Pandas to find the cumulative sum of all the missing values.
+                                                    <br> It has been observed that there are no missing values therefore, I will continue further processing.
+                                                </li>
+
+
+                                                <li><b><u>Step 7 - Scaling the Data: </u></b> 
+                                                    <br>I will scale the data as K-Means algorithm needs scaled data to work on.
+                                                    <br>To achieve this - I will use <b>MinMaxScaler</b> functionality of <b>sklearn.preprocessing</b> to scale the values in the range of 0 to 1.
+
+                                                    <div class="gfg">
+                                                        <img class = "center-img" src="images/kmeans/kmeans_scale.png">
+                                                    </div>
+
+                                                </li>
+                                                
+
+                                            </ul>
+                                        
+
+                                            <header>
+                                                <h3>K-Means Clustering Algorithm</h3>
+                                            </header>
+                                            
+                                            <ol>
+                                                <li> Select <b>K random points</b> in space (called centroids)</li>
+                                                <li>Assign each data point to the nearest centroid</li>
+                                                <li>Reposition the centroids to the mean dimension values of its cluster</li>
+                                                <li>Reassign each data point to the nearest centroid.</li>
+                                                <li>Steps 3 and 4 will continue until no data points move between clusters.</li>
+                                            </ol>
+
+                                            <header>
+                                                <h3>3. Model Building</h3>
+                                            </header>
+                                                <ul>
+                                                    <li><b>Step 1 - Selecting the value of K: Within Cluster Sum of Squares</b>:
+                                                    <br> WSS measures the <b>sum of squared euclidean distance</b> of the data points that lie from their closest <b>centroid</b>.
+                                                        It helps us understand the point where adding more centroids provide little benefit.
+                                                    <br> To find this value I will plot many values for K and see how this WCSS metric changes. This is also called as inertia.
+                                                        As we increase the value of K, the WCSS value always decreases. I will look at a <b>point where the decreasse is quite prominent</b> 
+                                                        before this point of diminishing returns.
+                                                    </li>
+                                                </li>
+                                                    
+                                                <span class="image fit"><img src="images/kmeans/kmeans_wcss.png" alt="" /></span><br>
+
+                                                <br> From the above plot I can conclude that the value of <b>K</b> i.e. <b>the number of clusters</b> must be <b>3</b> as this is the prominent point before diminishing returns. 
+                                                
+                                                <li><b><u>Step 2 - Instantiate and Fitting the Model</b></u>
+                                                <br> I will instantiate an object <b>kmeans</b> with the <b>number of clusters = 3</b>
+                                                <br> I will fit the data on the scaled clustering data that I created before. 
+                                                </li>
+                                                </ul>
+
+                                                
+
+                                                <header>
+                                                    <h3>4. Results</h3>
+                                                </header>
+
+                                                <ul>
+                                                    <li><b><u>Use Cluster Information</u></b>: To represent where each row of data belongs
+                                                        <br> I will create a new column named <b>cluster</b> to show in which cluster the row falls.
+                                                        
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/kmeans/kmeans_cluster.png">
+                                                        </div>
+
+                                                        <br> From the above figure, I can see that customers fall under clusters names <b>0, 1, 2</b>.
+
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/kmeans/kmeans_counts.png">
+                                                        </div>
+
+                                                        <br> It can be observed that the number of customers in <b>cluster 0</b> are <b>641</b>, <b>cluster 1</b> are <b>127</b> and <b>cluster 3</b> are <b>103</b>. 
+
+                                                    </li>
+                                                    <br>
+                                                    <li><b><u>Profiling our customers</u></b>: 
+                                                        <br> To understand exactly what the clusters do mean, I will need to do a little profiling. To do this, I will just perform 
+                                                        summary statistics on the variables that I used to cluster. For this, for each cluster I will calculate the mean percentage of sales for each of the product areas 
+                                                        and see what this shows up.
+                                                        <br> I will use the <b>groupby</b> functionality to group by each cluster and calculate the <b>Mean</b> based on each product area i.e. <b>Dairy, Fruit, Meat, Vegetables</b>.
+
+                                                        <br>
+                                                        <div class="gfg">
+                                                            <img class = "center-img" src="images/kmeans/kmeans_summary.png">
+                                                        </div>
+
+                                                        <br> From the above summary, I can obsserve that for every cluster the mean percentage of sales has been calculated. 
+                                                        For examplem, Cluster 0 represents, <b>22%</b> sales in <b>Dairy</b>, <b>26%</b> sales in <b>Fruits</b> and so on respectively.
+                                                    </li>
+                                                </ul>
+
+                                            
+                                                <header>
+                                                    <h3>5. Conclusion</h3>
+                                                </header>   
+                                                
+                                                <ul>
+                                                    <p>Looking at the tabular data that I obtained above I can conclude three things according to each cluster. 
+                                                        <br><b>Cluster 0</b>: For this cluster I can conclude that the customers are buying products from each section. And the meat consumption is th highest in this cluster.
+                                                        <br><b>Cluster 1</b>: For this cluster I can conclude that the customers are buying very less - close to negligible in the <b>Dairy</b> and <b>Meat</b> section, <b>Fruits</b> and <b>Vegetables</b>
+                                                        are consumed a lot for these two sections. The sales are <b>64%</b> and <b>35%</b> for the two sections respectively.
+                                                        <br><b>Cluster 2</b>: For this cluster I can conclude that the customers are buying from every section except the <b>Meat</b> section, as the sales there are just <b>2%</b>. 
+                                                        <br> Therefore, I can confidently go to th senior management of the ABC Grocery Store and conclude that the customers from cluster 0 are buying everything.
+                                                        Customers in cluster 1 can be <b>Vegan</b> as they are not spending anything in the dairy and meat section and the customers from cluster 2 could be vegeterian customers, 
+                                                        as they are not buying from the meat section. Presenting these findings will help The ABC Grocery team to segment customers based on Vegan, vegeterian and non-vegeterain customers.
+                                                        This will help the team to build some strategies around the three segments.
+
+                                                    </p>
+                                                </ul>
+
+                                    <hr />
+
+                                        <ul class="actions special">
+                                            <li><a href="index.html" class="button large">Home</a></li>
+                                        </ul>
+                                    
+                                </section>
+						<!-- Posts -->
+							
+                        	
+						
+                    
+
+						<!-- Footer -->
+						<!--	<footer> 
+								<div class="pagination"> -->
+									<!--<a href="#" class="previous">Prev</a>-->
+								<!--	<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer> -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>2951 S King Dr. Apt 1302<br />
+								Chicago, IL 60616</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(312) 826-9722</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto: ankit.arun.patil@gmail.com">ankit.arun.patil@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/ankit-arun-patil/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ankitarunpatil" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+                <div id="copyright">
+                    <ul><li>&copy; Ankit Patil</li><li><a href="index.html">Portfolio</a></li></ul>
+                        <ul><li>Page Views</li><li id="count">0</li></ul>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            const countE1 = document.getElementById("count");
+            countvisits();
+
+            function countvisits(){
+                fetch('https://api.countapi.xyz/update/dell/laptop/?amount=1')
+                .then((res)=>res.json())
+                .then((res) => {
+                    countE1.innerHTML = res.value;
+                });
+            }
+        </script>
+
+</body>
+</html>
